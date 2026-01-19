@@ -819,3 +819,68 @@ body.dark-mode .video-description {
     padding: 1.25rem;
   }
 }
+
+/* Container för ikonerna */
+.tech-icons-wrapper {
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+/* Enskild ikon-stil */
+.tech-icon {
+  width: 28px;
+  height: 28px;
+  background-color: rgba(255, 255, 255, 0.15); /* Halvgenomskinlig bakgrund */
+  backdrop-filter: blur(4px); /* Modern glaseffekt */
+  padding: 6px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  object-fit: contain;
+}
+
+.tech-icon:hover {
+  transform: translateY(-3px);
+  background-color: rgba(255, 255, 255, 0.9); /* Blir vit vid hover för tydlighet */
+}
+
+/* Justering för mobil: gör ikonerna lite mindre */
+@media (max-width: 480px) {
+  .tech-icon {
+    width: 24px;
+    height: 24px;
+    padding: 4px;
+  }
+}
+
+.tech-icons-wrapper {
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.tech-icon-badge {
+  background-color: rgba(255, 255, 255, 0.1);
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  transition: all 0.2s ease;
+}
+
+.tech-icon-badge:hover {
+  transform: translateY(-2px);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.overlay-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Ändra till space-between om du vill ha ikonerna längst till höger */
+  gap: 15px;
+  margin-top: 5px;
+}

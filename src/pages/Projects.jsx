@@ -22,42 +22,49 @@ const Projects = () => {
       title: "MusiQuiz",
       url: "https://musiquiz.frontend-erik.se/",
       image: "img/musiquiz.png",
+      technologies: ["react", "supabase"],
       description: "A full-stack degree project for school. Challenge a friend to a music quiz! Backend uses Supabase and frontend made with React/Vite."
     },
     {
-      title: "Nintendo Switch Game Library",
+      title: "Games Library",
       url: "https://games-library.frontend-erik.se/",
       image: "img/switch-library.png",
-      description: "A library to keep track of Nintendo Switch games. It allows users to add and remove games, mark them as completed and export/import lists as JSON."
+      technologies: ["react", "api", "json"],
+      description: "A library to keep track of games. It allows users to add and remove games, mark them as completed and export/import lists."
     },
     {
       title: "My Record Collection",
       url: "https://record-collection.frontend-erik.se/",
       image: "img/my-record-collection.png",
-      description: "A library to keep track of your record collection. Users can add and remove records and export/import lists as JSON."
+      technologies: ["react", "api", "json"],
+      description: "A library to keep track of your record collection. Users can add and remove records and export/import lists."
     },
     {
       title: "LEGO® Collector",
       url: "https://lego.frontend-erik.se/",
       image: "img/lego-collector.png",
-      description: "A library to keep track of your LEGO® collection. Users can add and remove sets and export/import lists as JSON."
+      technologies: ["react", "api", "json"],
+      description: "A library to keep track of your LEGO® collection. Users can search and add sets using Rebrickable and export/import lists."
     },
     {
       title: "Weather Dashboard",
       url: "https://weather.frontend-erik.se/",
       image: "img/weather.png",
+      technologies: ["react", "api", "json"],
       description: "A weather dashboard which uses OpenWeatherMap API to display weather information."
     },
     {
       title: "Beepbox Covers",
       url: "https://beepbox.frontend-erik.se/",
       image: "img/beepbox.png",
+      technologies: ["html", "css"],
       description: "A Beepbox music portfolio made entirely from HTML and CSS styling. It features a widget component for playing both my cover and the original song in Spotify."
     },
     {
       title: "Simple ToDo",
       url: "https://todo.frontend-erik.se/",
       image: "img/todo.png",
+      technologies: ["html", "css", "javascript"],
       description: "A simple to-do list application to keep track of tasks. Users can add, remove, and mark tasks as completed."
     }
   ];
