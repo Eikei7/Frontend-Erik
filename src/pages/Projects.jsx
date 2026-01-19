@@ -20,43 +20,43 @@ const Projects = () => {
   const projects = [
     {
       title: "MusiQuiz",
-      url: "https://musi-quiz.netlify.app/",
+      url: "https://musiquiz.frontend-erik.se/",
       image: "img/musiquiz.png",
       description: "A full-stack degree project for school. Challenge a friend to a music quiz! Backend uses Supabase and frontend made with React/Vite."
     },
     {
       title: "Nintendo Switch Game Library",
-      url: "https://switch-game-library.netlify.app/",
+      url: "https://games-library.frontend-erik.se/",
       image: "img/switch-library.png",
       description: "A library to keep track of Nintendo Switch games. It allows users to add and remove games, mark them as completed and export/import lists as JSON."
     },
     {
       title: "My Record Collection",
-      url: "https://my-record-collection.netlify.app/",
+      url: "https://record-collection.frontend-erik.se/",
       image: "img/my-record-collection.png",
       description: "A library to keep track of your record collection. Users can add and remove records and export/import lists as JSON."
     },
     {
       title: "LEGO® Collector",
-      url: "https://my-lego-collection.netlify.app/",
+      url: "https://lego.frontend-erik.se/",
       image: "img/lego-collector.png",
       description: "A library to keep track of your LEGO® collection. Users can add and remove sets and export/import lists as JSON."
     },
     {
       title: "Weather Dashboard",
-      url: "https://eriks-weather-dashboard.netlify.app/",
+      url: "https://weather.frontend-erik.se/",
       image: "img/weather.png",
       description: "A weather dashboard which uses OpenWeatherMap API to display weather information."
     },
     {
       title: "Beepbox Covers",
-      url: "https://erik-beepbox.netlify.app/",
+      url: "https://beepbox.frontend-erik.se/",
       image: "img/beepbox.png",
       description: "A Beepbox music portfolio made entirely from HTML and CSS styling. It features a widget component for playing both my cover and the original song in Spotify."
     },
     {
       title: "Simple ToDo",
-      url: "https://super-simple-to-do.netlify.app/",
+      url: "https://todo.frontend-erik.se/",
       image: "img/todo.png",
       description: "A simple to-do list application to keep track of tasks. Users can add, remove, and mark tasks as completed."
     }
