@@ -10,7 +10,6 @@ import AboutMe from './pages/AboutMe';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-// ScrollToTop component
 function ScrollToTop() {
   const { pathname } = useLocation();
 

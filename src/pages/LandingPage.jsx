@@ -11,6 +11,7 @@ import {
   mdiNodejs, 
   mdiWordpress,
   mdiPlex,
+  mdiGithub,
   mdiMicrosoftVisualStudioCode,
   mdiLambda
 } from '@mdi/js';
@@ -50,6 +51,7 @@ const LandingPage = () => {
     },
     { icon: mdiMicrosoftWindows, name: 'Windows' },
     { icon: mdiPlex , name: 'Plex' },
+    { icon: mdiGithub, name: 'GitHub' },
     {
       svg: (
         <svg
