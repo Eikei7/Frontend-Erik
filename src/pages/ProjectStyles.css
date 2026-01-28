@@ -711,14 +711,12 @@ body.dark-mode .overlay-project-card:hover .overlay-image::before {
   }
 }
 
-/* Video projects section */
 .video-projects-section {
   margin: 4rem auto 2rem;
   width: 100%;
   max-width: 1200px;
 }
 
-/* Video grid */
 .video-projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -726,7 +724,6 @@ body.dark-mode .overlay-project-card:hover .overlay-image::before {
   margin-top: 2rem;
 }
 
-/* Video card */
 .video-card {
   background-color: white;
   border-radius: 12px;
@@ -743,11 +740,10 @@ body.dark-mode .overlay-project-card:hover .overlay-image::before {
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
-/* Responsive video container */
 .video-container {
   position: relative;
   width: 100%;
-  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  padding-top: 56.25%;
   overflow: hidden;
 }
 
@@ -760,7 +756,6 @@ body.dark-mode .overlay-project-card:hover .overlay-image::before {
   border: 0;
 }
 
-/* Video content */
 .video-content {
   padding: 1.5rem;
   flex-grow: 1;
@@ -783,7 +778,6 @@ body.dark-mode .overlay-project-card:hover .overlay-image::before {
   flex-grow: 1;
 }
 
-/* Dark mode styles */
 body.dark-mode .video-card {
   background-color: #243b55;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
@@ -820,19 +814,17 @@ body.dark-mode .video-description {
   }
 }
 
-/* Container för ikonerna */
 .tech-icons-wrapper {
   display: flex;
   gap: 8px;
   z-index: 10;
 }
 
-/* Enskild ikon-stil */
 .tech-icon {
   width: 28px;
   height: 28px;
-  background-color: rgba(255, 255, 255, 0.15); /* Halvgenomskinlig bakgrund */
-  backdrop-filter: blur(4px); /* Modern glaseffekt */
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(4px);
   padding: 6px;
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -842,10 +834,9 @@ body.dark-mode .video-description {
 
 .tech-icon:hover {
   transform: translateY(-3px);
-  background-color: rgba(255, 255, 255, 0.9); /* Blir vit vid hover för tydlighet */
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
-/* Justering för mobil: gör ikonerna lite mindre */
 @media (max-width: 480px) {
   .tech-icon {
     width: 24px;
@@ -880,7 +871,7 @@ body.dark-mode .video-description {
 .overlay-footer {
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* Ändra till space-between om du vill ha ikonerna längst till höger */
+  justify-content: flex-start;
   gap: 15px;
   margin-top: 5px;
 }
