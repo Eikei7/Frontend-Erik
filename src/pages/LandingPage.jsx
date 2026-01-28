@@ -3,7 +3,7 @@ import { IconContext } from 'react-icons';
 import { mdiMicrosoftWindows, mdiAws, mdiMicrosoftVisualStudioCode} from '@mdi/js';
 import { SiNetlify, SiFigma, SiHtml5, SiCss3, SiAwslambda, SiReact,
 SiJavascript, SiSupabase, SiGithub, SiPlex, SiWordpress, SiNodedotjs,
-SiHomeassistant} from 'react-icons/si';
+SiHomeassistant, SiClaude} from 'react-icons/si';
 import Contact from './Contact';
 import './LandingPageStyles.css';
 
@@ -27,12 +27,12 @@ const TECH_SKILLS = [
   { component: <SiWordpress />, name: 'WordPress' },
   { component: <SiHomeassistant />, name: 'Home Assistant' },
   { component: <SiFigma />, name: 'Figma' },
-  { icon: mdiMicrosoftWindows, name: 'Windows' },
-  { component: <SiPlex />, name: 'Plex' },
+  { icon: mdiMicrosoftWindows, name: 'Windows 10/11' },
+  { component: <SiPlex />, name: 'Plex Media Server' },
   { component: <SqlIcon />, name: 'SQL' },
   { component: <SiNetlify />, name: 'Netlify' },
   { component: <SiGithub />, name: 'GitHub' },
-  
+  { component: <SiClaude />, name: 'Claude' },
 ];
 
 const LandingPage = () => {
