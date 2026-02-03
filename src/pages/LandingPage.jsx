@@ -3,7 +3,7 @@ import { IconContext } from 'react-icons';
 import { mdiMicrosoftWindows, mdiAws, mdiMicrosoftVisualStudioCode} from '@mdi/js';
 import { SiNetlify, SiFigma, SiHtml5, SiCss3, SiAwslambda, SiReact,
 SiJavascript, SiSupabase, SiGithub, SiPlex, SiWordpress, SiNodedotjs,
-SiHomeassistant, SiClaude} from 'react-icons/si';
+SiHomeassistant, SiClaude, SiFlutter} from 'react-icons/si';
 import Contact from './Contact';
 import './LandingPageStyles.css';
 
@@ -33,6 +33,7 @@ const TECH_SKILLS = [
   { component: <SiNetlify />, name: 'Netlify' },
   { component: <SiGithub />, name: 'GitHub' },
   { component: <SiClaude />, name: 'Claude' },
+  { component: <SiFlutter />, name: 'Flutter (currently learning)' },
 ];
 
 const LandingPage = () => {
@@ -46,7 +47,7 @@ const LandingPage = () => {
               <h2 className="title-heading">Frontend developer, tech nerd and music lover</h2>
               <article className="about-text">
                 <p>I'm a creative person who loves anything tech and web related. I'm also interested in all kinds of music.</p>
-                <p>I know my way around the following web technologies, services and systems:</p>
+                <p>I know and use the following technologies, services and systems regularly:</p>
               </article>
               <IconContext.Provider value={{ size: "2.6em", className: "global-class-name" }}>
               <div className="skills-grid">
