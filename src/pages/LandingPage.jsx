@@ -14,26 +14,46 @@ const SqlIcon = () => (
   </svg>
 );
 
-const TECH_SKILLS = [
-  { component: <SiHtml5 />, name: 'HTML5' },
-  { component: <SiCss3 />, name: 'CSS3' },
-  { component: <SiJavascript />, name: 'JavaScript' },
-  { component: <SiReact />, name: 'React' },
-  { component: <SiNodedotjs />, name: 'Node.js' },
-  { icon: mdiAws, name: 'AWS' },
-  { component: <SiAwslambda />, name: 'AWS Lambda' },
-  { component: <SiSupabase />, name: 'Supabase' },
-  { icon: mdiMicrosoftVisualStudioCode, name: 'VS Code' },
-  { component: <SiWordpress />, name: 'WordPress' },
-  { component: <SiHomeassistant />, name: 'Home Assistant' },
-  { component: <SiFigma />, name: 'Figma' },
-  { icon: mdiMicrosoftWindows, name: 'Windows 10/11' },
-  { component: <SiPlex />, name: 'Plex Media Server' },
-  { component: <SqlIcon />, name: 'SQL' },
-  { component: <SiNetlify />, name: 'Netlify' },
-  { component: <SiGithub />, name: 'GitHub' },
-  { component: <SiClaude />, name: 'Claude' },
-  { component: <SiFlutter />, name: 'Flutter (currently learning)' },
+const SKILL_GROUPS = [
+  {
+    category: "Web, Frontend & UX/UI",
+    skills: [
+      { component: <SiHtml5 />, name: 'HTML5' },
+      { component: <SiCss3 />, name: 'CSS3' },
+      { component: <SiJavascript />, name: 'JavaScript' },
+      { component: <SiReact />, name: 'React' },
+      { component: <SiFigma />, name: 'Figma' },
+      { component: <SiFlutter />, name: 'Flutter (Learning)' },
+    ]
+  },
+  {
+    category: "Backend & Database",
+    skills: [
+      { component: <SiNodedotjs />, name: 'Node.js' },
+      { component: <SiSupabase />, name: 'Supabase' },
+      { component: <SqlIcon />, name: 'SQL' },
+      { component: <SiAwslambda />, name: 'AWS Lambda' },
+    ]
+  },
+  {
+    category: "Infrastructure & Tools",
+    skills: [
+      { icon: mdiAws, name: 'AWS' },
+      { component: <SiNetlify />, name: 'Netlify' },
+      { component: <SiGithub />, name: 'GitHub' },
+      { icon: mdiMicrosoftVisualStudioCode, name: 'VS Code' },
+      { component: <SiClaude />, name: 'Claude (AI)' },
+    ]
+  },
+  {
+    category: "Systems & Home Lab",
+    skills: [
+      { component: <SiHomeassistant />, name: 'Home Assistant' },
+      { component: <SiPlex />, name: 'Plex Server' },
+      { icon: mdiMicrosoftWindows, name: 'Windows' },
+      { component: <SiWordpress />, name: 'WordPress' },
+    ]
+  }
 ];
 
 const LandingPage = () => {
@@ -49,21 +69,22 @@ const LandingPage = () => {
                 <p>I'm a creative person who loves anything tech and web related. I'm also interested in all kinds of music.</p>
                 <p>I know and use the following technologies, services and systems regularly:</p>
               </article>
-              <IconContext.Provider value={{ size: "2.6em", className: "global-class-name" }}>
-              <div className="skills-grid">
-                {TECH_SKILLS.map((skill, index) => (
-                  <div className="skill-item" key={index}>
-                    <div className="skill-icon">
-                      {skill.component ? (
-                        skill.component
-                      ) : (
-                        <Icon path={skill.icon} size="2.8em" />
-                      )}
-                    </div>
-                    <span className="skill-name">{skill.name}</span>
+              <IconContext.Provider value={{ size: "2.2em", className: "global-class-name" }}>
+              {SKILL_GROUPS.map((group, groupIndex) => (
+                <div key={groupIndex} className="skill-group-container">
+                  <h3 className="category-title">{group.category}</h3>
+                  <div className="skills-grid">
+                    {group.skills.map((skill, index) => (
+                      <div className="skill-item" key={index}>
+                        <div className="skill-icon">
+                          {skill.component ? skill.component : <Icon path={skill.icon} size="2.8em" />}
+                        </div>
+                        <span className="skill-name">{skill.name}</span>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </IconContext.Provider>
             </div>
           </header>

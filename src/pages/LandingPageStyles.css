@@ -1,3 +1,12 @@
+.category-title {
+  font-size: 1.2rem;
+  color: var(--steelblue, #415A77);
+  /* padding-bottom: 0.5rem; */
+  font-weight: 600;
+  /* text-transform: uppercase; */
+  letter-spacing: 1px;
+}
+
 .landing-container {
   width: 100%;
   margin: 0 auto;
@@ -64,7 +73,10 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
   gap: 1.5rem;
-  margin-top: 2rem;
+}
+
+.skill-group-container {
+  margin-bottom: 2.5rem;
 }
 
 .skill-item {
@@ -91,6 +103,10 @@
   text-align: center;
 }
 
+body.dark-mode .category-title {
+  color: #CAD2C5;
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
 
 body.dark-mode .landing-container {
   background: #141E30;
