@@ -3,7 +3,7 @@ import { IconContext } from 'react-icons';
 import { mdiMicrosoftWindows, mdiAws, mdiMicrosoftVisualStudioCode} from '@mdi/js';
 import { SiNetlify, SiFigma, SiHtml5, SiCss3, SiAwslambda, SiReact,
 SiJavascript, SiSupabase, SiGithub, SiPlex, SiWordpress, SiNodedotjs,
-SiHomeassistant, SiClaude, SiFlutter} from 'react-icons/si';
+SiHomeassistant, SiClaude, SiFlutter, SiEsphome} from 'react-icons/si';
 import Contact from './Contact';
 import './LandingPageStyles.css';
 
@@ -23,6 +23,7 @@ const SKILL_GROUPS = [
       { component: <SiJavascript />, name: 'JavaScript' },
       { component: <SiReact />, name: 'React' },
       { component: <SiFigma />, name: 'Figma' },
+      { component: <SiWordpress />, name: 'WordPress' },
       { component: <SiFlutter />, name: 'Flutter (Learning)' },
     ]
   },
@@ -51,7 +52,7 @@ const SKILL_GROUPS = [
       { component: <SiHomeassistant />, name: 'Home Assistant' },
       { component: <SiPlex />, name: 'Plex Server' },
       { icon: mdiMicrosoftWindows, name: 'Windows' },
-      { component: <SiWordpress />, name: 'WordPress' },
+      { component: <SiEsphome />, name: 'ESPHome' },
     ]
   }
 ];
