@@ -25,7 +25,7 @@ const SKILL_GROUPS = [
       { component: <SiReact />, name: 'React' },
       { component: <SiFigma />, name: 'Figma' },
       { component: <SiWordpress />, name: 'WordPress' },
-      { component: <SiFlutter />, name: 'Flutter (Learning)' },
+      { component: <SiFlutter />, name: 'Flutter' },
     ]
   },
   {
@@ -45,7 +45,7 @@ const SKILL_GROUPS = [
       { component: <SiNetlify />, name: 'Netlify' },
       { component: <SiGithub />, name: 'GitHub' },
       { icon: mdiMicrosoftVisualStudioCode, name: 'VS Code' },
-      { component: <SiClaude />, name: 'Claude (AI)' },
+      { component: <SiClaude />, name: 'Claude' },
     ]
   },
   {
