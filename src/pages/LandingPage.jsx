@@ -3,7 +3,8 @@ import { IconContext } from 'react-icons';
 import { mdiMicrosoftWindows, mdiAws, mdiMicrosoftVisualStudioCode} from '@mdi/js';
 import { SiNetlify, SiFigma, SiHtml5, SiCss3, SiAwslambda, SiReact,
 SiJavascript, SiSupabase, SiGithub, SiPlex, SiWordpress, SiNodedotjs,
-SiHomeassistant, SiClaude, SiFlutter, SiEsphome} from 'react-icons/si';
+SiHomeassistant, SiClaude, SiFlutter, SiEsphome,
+SiNpm} from 'react-icons/si';
 import Contact from './Contact';
 import './LandingPageStyles.css';
 
@@ -39,6 +40,7 @@ const SKILL_GROUPS = [
   {
     category: "Infrastructure & Tools",
     skills: [
+      { component: <SiNpm />, name: 'npm' },
       { icon: mdiAws, name: 'AWS' },
       { component: <SiNetlify />, name: 'Netlify' },
       { component: <SiGithub />, name: 'GitHub' },
