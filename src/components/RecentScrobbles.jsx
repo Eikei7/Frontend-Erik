@@ -15,7 +15,6 @@ const getTimeAgo = (uts) => {
 const RecentScrobbles = () => {
   const [tracks, setTracks] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [isExpanded, setIsExpanded] = useState(false);
   
   const controls = useDragControls();
 
@@ -30,10 +29,6 @@ const RecentScrobbles = () => {
   const startDrag = useCallback((event) => {
     controls.start(event);
   }, [controls]);
-
-  const toggleExpanded = useCallback(() => {
-    setIsExpanded(prev => !prev);
-  }, []);
 
   useEffect(() => {
     if (!API_KEY) {
@@ -69,57 +64,49 @@ const RecentScrobbles = () => {
       dragControls={controls}
       dragListener={false}
       dragMomentum={false}
-      className={`recent-tracks-container ${isExpanded ? 'is-expanded' : 'is-collapsed'}`}
+      className="recent-tracks-container"
     >
       <div 
         className="recent-tracks-header" 
         onPointerDown={startDrag} 
         style={{ cursor: 'grab' }}
       >
-        <h3 onClick={toggleExpanded}>Recently listened to:</h3>
-        <button 
-          className="toggle-button" 
-          onClick={toggleExpanded}
-        >
-          {isExpanded ? '−' : '+'}
-        </button>
+        <h3>Recently listened to:</h3>
       </div>
 
-      {isExpanded && (
-        <ul className="track-list">
-          {tracks.map((track, index) => (
-            <li key={track.date?.uts || `track-${index}`} className="track-item">
-              <img 
-                className="album-art"
-                src={track.image[2]['#text'] || 'placeholder-bild.png'} 
-                alt="Album cover"
-                draggable={false}
-              />
-              <div className="track-info">
-                <span className="track-name">{track.name}</span>
-                <span className="artist-name">{track.artist['#text']}</span>
-                <div className="track-status">
-                  {track['@attr']?.nowplaying === 'true' ? (
-                    <span className="now-playing-badge">LISTENING NOW</span>
-                  ) : (
-                    <span className="time-ago">{track.date ? getTimeAgo(track.date.uts) : ''}</span>
-                  )}
-                </div>
+      <ul className="track-list">
+        {tracks.map((track, index) => (
+          <li key={track.date?.uts || `track-${index}`} className="track-item">
+            <img 
+              className="album-art"
+              src={track.image[2]['#text'] || 'placeholder-bild.png'} 
+              alt="Album cover"
+              draggable={false}
+            />
+            <div className="track-info">
+              <span className="track-name">{track.name}</span>
+              <span className="artist-name">{track.artist['#text']}</span>
+              <div className="track-status">
+                {track['@attr']?.nowplaying === 'true' ? (
+                  <span className="now-playing-badge">LISTENING NOW</span>
+                ) : (
+                  <span className="time-ago">{track.date ? getTimeAgo(track.date.uts) : ''}</span>
+                )}
               </div>
-            </li>
-          ))}
-          <div className="lastfm-link">
-            <a href={`https://www.last.fm/api#getting-started`} target="_blank" rel="noopener noreferrer">
-              Powered by <img 
-                src="../img/lastfm.png" 
-                alt="Last.fm logo" 
-                className="lastfm-logo"
-                draggable={false}
-              />
-            </a>
-          </div>
-        </ul>
-      )}
+            </div>
+          </li>
+        ))}
+        <div className="lastfm-link">
+          <a href={`https://www.last.fm/api#getting-started`} target="_blank" rel="noopener noreferrer">
+            Powered by <img 
+              src="../img/lastfm.png" 
+              alt="Last.fm logo" 
+              className="lastfm-logo"
+              draggable={false}
+            />
+          </a>
+        </div>
+      </ul>
     </motion.div>
   );
 };

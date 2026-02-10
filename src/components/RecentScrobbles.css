@@ -26,15 +26,6 @@ body.dark-mode .recent-tracks-container h3 {
   color: var(--orange, #e26d5c);
 }
 
-body.dark-mode .toggle-button {
-  border-color: var(--orange, #e26d5c);
-  color: var(--orange, #e26d5c);
-}
-
-body.dark-mode .track-item:hover {
-  background: #252525;
-}
-
 body.dark-mode .track-name {
   color: #CAD2C5;
 }
@@ -135,27 +126,6 @@ body.dark-mode .lastfm-link a {
   color: #8b8b8b;
   font-size: 0.75rem;
   font-style: italic;
-}
-
-.toggle-button {
-  align-items: center;
-  background: none;
-  border: 2px solid #86b8db;
-  border-radius: 50%;
-  color: #86b8db;
-  cursor: pointer;
-  display: flex;
-  font-size: 1.2rem;
-  font-weight: bold;
-  height: 24px;
-  justify-content: center;
-  transition: all 0.2s;
-  width: 24px;
-}
-
-.toggle-button:hover {
-  background: #86b8db;
-  color: white;
 }
 
 .track-info {
