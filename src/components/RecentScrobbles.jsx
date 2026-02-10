@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback, useMemo } from 'react';
+import { motion, useDragControls } from 'framer-motion';
 import './RecentScrobbles.css';
 
 const getTimeAgo = (uts) => {
@@ -15,14 +16,28 @@ const RecentScrobbles = () => {
   const [tracks, setTracks] = useState([]);
   const [loading, setLoading] = useState(true);
   const [isExpanded, setIsExpanded] = useState(false);
+  
+  const controls = useDragControls();
 
   const API_KEY = import.meta.env.VITE_LASTFM_API_KEY;
   const USERNAME = 'Eikei';
-  const URL = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${USERNAME}&api_key=${API_KEY}&limit=6&format=json`;
+  
+  const URL = useMemo(
+    () => `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${USERNAME}&api_key=${API_KEY}&limit=6&format=json`,
+    [API_KEY]
+  );
+
+  const startDrag = useCallback((event) => {
+    controls.start(event);
+  }, [controls]);
+
+  const toggleExpanded = useCallback(() => {
+    setIsExpanded(prev => !prev);
+  }, []);
 
   useEffect(() => {
     if (!API_KEY) {
-      console.error("API-nyckel saknas! Kolla din .env-fil eller Netlify-inställningar.");
+      console.error("API key is missing. Please set VITE_LASTFM_API_KEY in your environment variables.");
       return;
     }
     
@@ -44,15 +59,28 @@ const RecentScrobbles = () => {
     fetchTracks();
     const interval = setInterval(fetchTracks, 30000);
     return () => clearInterval(interval);
-  }, [URL]);
+  }, [URL, API_KEY]);
 
   if (loading) return <p className="recent-tracks-loading">Loading music...</p>;
 
   return (
-    <div className={`recent-tracks-container ${isExpanded ? 'is-expanded' : 'is-collapsed'}`}>
-      <div className="recent-tracks-header" onClick={() => setIsExpanded(!isExpanded)}>
-        <h3>Recently listened to:</h3>
-        <button className="toggle-button">
+    <motion.div 
+      drag
+      dragControls={controls}
+      dragListener={false}
+      dragMomentum={false}
+      className={`recent-tracks-container ${isExpanded ? 'is-expanded' : 'is-collapsed'}`}
+    >
+      <div 
+        className="recent-tracks-header" 
+        onPointerDown={startDrag} 
+        style={{ cursor: 'grab' }}
+      >
+        <h3 onClick={toggleExpanded}>Recently listened to:</h3>
+        <button 
+          className="toggle-button" 
+          onClick={toggleExpanded}
+        >
           {isExpanded ? '−' : '+'}
         </button>
       </div>
@@ -60,11 +88,12 @@ const RecentScrobbles = () => {
       {isExpanded && (
         <ul className="track-list">
           {tracks.map((track, index) => (
-            <li key={index} className="track-item">
+            <li key={track.date?.uts || `track-${index}`} className="track-item">
               <img 
                 className="album-art"
                 src={track.image[2]['#text'] || 'placeholder-bild.png'} 
-                alt="Album cover" 
+                alt="Album cover"
+                draggable={false}
               />
               <div className="track-info">
                 <span className="track-name">{track.name}</span>
@@ -79,9 +108,19 @@ const RecentScrobbles = () => {
               </div>
             </li>
           ))}
+          <div className="lastfm-link">
+            <a href={`https://www.last.fm/api#getting-started`} target="_blank" rel="noopener noreferrer">
+              Powered by <img 
+                src="../img/lastfm.png" 
+                alt="Last.fm logo" 
+                className="lastfm-logo"
+                draggable={false}
+              />
+            </a>
+          </div>
         </ul>
       )}
-    </div>
+    </motion.div>
   );
 };
 

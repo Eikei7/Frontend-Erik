@@ -39,6 +39,26 @@ body.dark-mode .track-name {
   color: #CAD2C5;
 }
 
+.lastfm-link {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.lastfm-link a {
+  color: var(--steelblue);
+  text-decoration: none;
+}
+
+body.dark-mode .lastfm-link a {
+  color: var(--orange, #e26d5c);
+}
+
+.lastfm-logo {
+  height: 40px;
+  vertical-align: middle;
+  width: auto;
+}
+
 .now-playing-badge {
   animation: pulse 1.5s infinite;
   background: #fa5252;
@@ -62,9 +82,20 @@ body.dark-mode .track-name {
   position: absolute;
   right: 20px;
   top: 9rem;
-  transition: all 0.3s ease-in-out;
   width: 300px;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  cursor: grab;
+  touch-action: none;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+}
+
+.recent-tracks-container * {
+  pointer-events: auto;
+}
+
+.recent-tracks-container:active {
+  cursor: grabbing;
 }
 
 .recent-tracks-container.is-expanded {
@@ -78,11 +109,19 @@ body.dark-mode .track-name {
   margin: 0;
 }
 
+.recent-tracks-container img {
+  pointer-events: none;
+  user-select: none;
+}
+
 .recent-tracks-header {
   align-items: center;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
+  user-select: none;
+  touch-action: none;
+  -webkit-user-select: none;
 }
 
 .recent-tracks-loading {
