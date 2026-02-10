@@ -15,6 +15,7 @@ const getTimeAgo = (uts) => {
 const RecentScrobbles = () => {
   const [tracks, setTracks] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [isDraggable, setIsDraggable] = useState(window.innerWidth > 1500);
   
   const controls = useDragControls();
 
@@ -27,8 +28,19 @@ const RecentScrobbles = () => {
   );
 
   const startDrag = useCallback((event) => {
-    controls.start(event);
-  }, [controls]);
+    if (isDraggable) {
+      controls.start(event);
+    }
+  }, [controls, isDraggable]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDraggable(window.innerWidth > 1500);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     if (!API_KEY) {
@@ -60,16 +72,16 @@ const RecentScrobbles = () => {
 
   return (
     <motion.div 
-      drag
-      dragControls={controls}
+      drag={isDraggable}
+      dragControls={isDraggable ? controls : undefined}
       dragListener={false}
       dragMomentum={false}
       className="recent-tracks-container"
     >
       <div 
         className="recent-tracks-header" 
-        onPointerDown={startDrag} 
-        style={{ cursor: 'grab' }}
+        onPointerDown={isDraggable ? startDrag : undefined}
+        style={{ cursor: isDraggable ? 'grab' : 'default' }}
       >
         <h3>Recently listened to:</h3>
       </div>

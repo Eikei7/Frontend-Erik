@@ -66,7 +66,7 @@ body.dark-mode .lastfm-link a {
 .recent-tracks-container {
   background: #ffffff;
   border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   color: var(--steelblue);
   font-family: 'DM Sans', sans-serif;
   padding: 15px;
@@ -74,7 +74,6 @@ body.dark-mode .lastfm-link a {
   right: 20px;
   top: 9rem;
   width: 300px;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   cursor: grab;
   touch-action: none;
   will-change: transform;
@@ -87,10 +86,6 @@ body.dark-mode .lastfm-link a {
 
 .recent-tracks-container:active {
   cursor: grabbing;
-}
-
-.recent-tracks-container.is-expanded {
-  width: 300px;
 }
 
 .recent-tracks-container h3 {
@@ -106,10 +101,6 @@ body.dark-mode .lastfm-link a {
 }
 
 .recent-tracks-header {
-  align-items: center;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
   user-select: none;
   touch-action: none;
   -webkit-user-select: none;
