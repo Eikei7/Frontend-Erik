@@ -7,6 +7,7 @@ SiHomeassistant, SiClaude, SiFlutter, SiEsphome,
 SiNpm} from 'react-icons/si';
 import Contact from './Contact';
 import './LandingPageStyles.css';
+import RecentScrobbles from '../components/RecentScrobbles';
 
 const SqlIcon = () => (
   <svg viewBox="0 0 24 24" fill="currentColor" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
@@ -48,6 +49,7 @@ const SKILL_GROUPS = [
       { component: <SiClaude />, name: 'Claude' },
     ]
   },
+
   {
     category: "Systems & Home Lab",
     skills: [
@@ -91,10 +93,12 @@ const LandingPage = () => {
             </IconContext.Provider>
             </div>
           </header>
+          <section id="recent-scrobbles-section">
+        <RecentScrobbles />
+      </section>
           <div className="scroll-indicator" aria-hidden="true"></div>
         </div>
       </section>
-      
       <section id="contact-section">
         <Contact />
       </section>

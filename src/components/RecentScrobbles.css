@@ -1,0 +1,173 @@
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+
+.album-art {
+  border-radius: 4px;
+  height: 70px;
+  margin-right: 15px;
+  object-fit: cover;
+  width: 70px;
+}
+
+.artist-name {
+  color: #aaa;
+  display: block;
+  font-size: 0.85rem;
+}
+
+body.dark-mode .recent-tracks-container {
+  background-color: #243b55;
+}
+
+body.dark-mode .recent-tracks-container h3 {
+  color: var(--orange, #e26d5c);
+}
+
+body.dark-mode .toggle-button {
+  border-color: var(--orange, #e26d5c);
+  color: var(--orange, #e26d5c);
+}
+
+body.dark-mode .track-item:hover {
+  background: #252525;
+}
+
+body.dark-mode .track-name {
+  color: #CAD2C5;
+}
+
+.now-playing-badge {
+  animation: pulse 1.5s infinite;
+  background: #fa5252;
+  border-radius: 4px;
+  color: white;
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  margin-top: 4px;
+  padding: 2px 8px;
+}
+
+.recent-tracks-container {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  color: var(--steelblue);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", 'Roboto', sans-serif;
+  padding: 15px;
+  position: absolute;
+  right: 20px;
+  top: 9rem;
+  transition: all 0.3s ease-in-out;
+  width: 300px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.recent-tracks-container.is-expanded {
+  width: 300px;
+}
+
+.recent-tracks-container h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.recent-tracks-header {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+}
+
+.recent-tracks-loading {
+  color: #86b8db;
+  position: absolute;
+  right: 20px;
+  top: 9rem;
+}
+
+.time-ago {
+  color: #8b8b8b;
+  font-size: 0.75rem;
+  font-style: italic;
+}
+
+.toggle-button {
+  align-items: center;
+  background: none;
+  border: 2px solid #86b8db;
+  border-radius: 50%;
+  color: #86b8db;
+  cursor: pointer;
+  display: flex;
+  font-size: 1.2rem;
+  font-weight: bold;
+  height: 24px;
+  justify-content: center;
+  transition: all 0.2s;
+  width: 24px;
+}
+
+.toggle-button:hover {
+  background: #86b8db;
+  color: white;
+}
+
+.track-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.track-item {
+  align-items: center;
+  border-bottom: 1px solid #b8b8b8;
+  border-radius: 8px;
+  display: flex;
+  padding: 10px;
+  transition: background 0.2s ease;
+}
+
+.track-item:last-child {
+  border-bottom: none;
+}
+
+.track-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.track-name {
+  display: block;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.track-status {
+  margin-top: 4px;
+}
+
+@media (max-width: 1500px) {
+  .recent-tracks-container {
+    margin: 2rem auto;
+    position: relative;
+    right: auto;
+    top: auto;
+    width: 90%;
+  }
+
+  .recent-tracks-loading {
+    margin: 1rem auto;
+    position: relative;
+    right: auto;
+    text-align: center;
+    top: auto;
+  }
+}

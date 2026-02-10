@@ -17,7 +17,6 @@ function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   
-  // Kontrollera om användaren skrollar för att ändra navbar-stil
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
@@ -31,7 +30,6 @@ function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   
-  // Stäng menyn när användaren navigerar
   useEffect(() => {
     setMobileMenuOpen(false);
   }, [location]);
@@ -54,11 +52,6 @@ function Navbar() {
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''} ${mobileMenuOpen ? 'menu-open' : ''}`}>
       <div className="navbar-container">
-        {/* <div className="navbar-logo">
-          <Link to="/">
-            <img src="./img/e-k-logo.png" alt="EK-logo" />
-          </Link>
-        </div> */}
         
         <div className="navbar-mobile-toggle" onClick={toggleMobileMenu}>
           <Icon path={mobileMenuOpen ? mdiClose : mdiMenu} size={1.5} />

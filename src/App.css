@@ -37,13 +37,11 @@ body.dark-mode {
   transition: all 0.5s ease-in-out;
 }
 
-/* Uppdaterade dark mode-selektorer för nya komponenter */
 body.dark-mode nav {
   background-color: #2F3E46;
 }
 
 
-/* Nya selektorer för nya komponenter */
 body.dark-mode .projects-container,
 body.dark-mode .aboutme-container,
 body.dark-mode .contact-container {
@@ -54,7 +52,6 @@ body.dark-mode .landing-container {
   background-color: #4785a7;
 }
 
-/* Nya selektorer */
 body.dark-mode .project-card,
 body.dark-mode .aboutme-content,
 body.dark-mode .repo-card {
@@ -63,7 +60,6 @@ body.dark-mode .repo-card {
   color: #CAD2C5;
 }
 
-/* Nya text-selektorer */
 body.dark-mode .name-heading,
 body.dark-mode .about-text p,
 body.dark-mode .contact-intro p,
