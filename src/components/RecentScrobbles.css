@@ -75,7 +75,6 @@ body.dark-mode .lastfm-link a {
   top: 9rem;
   width: 300px;
   cursor: grab;
-  touch-action: none;
   will-change: transform;
   transform: translate3d(0, 0, 0);
 }
@@ -160,7 +159,6 @@ body.dark-mode .lastfm-link a {
     position: relative;
     right: auto;
     top: auto;
-    /* width: 90%; */
   }
 
   .recent-tracks-loading {
