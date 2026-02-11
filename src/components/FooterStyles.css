@@ -8,6 +8,7 @@
     width: 100%;
     box-sizing: border-box;
     background: linear-gradient(to right, #7BC6CC, #BE93C5);
+    z-index: 1000;
   }
   
   .footerContent {
@@ -54,7 +55,6 @@
     filter: brightness(1.5);
   }
   
-  /* Dark mode styles */
   body.dark-mode .footerBox {
     background: #141E30;
     background: linear-gradient(to right, #243B55, #141E30);
@@ -65,7 +65,7 @@
   }
 
   body.dark-mode .footerCopyright {
-    color: var(--almostwhite); /* Lighter color for dark mode */
+    color: var(--almostwhite);
   }
     
   /* Responsive styles */
