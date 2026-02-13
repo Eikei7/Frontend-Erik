@@ -2,7 +2,7 @@ import Icon from '@mdi/react';
 import { IconContext } from 'react-icons';
 import { mdiMicrosoftWindows, mdiAws, mdiMicrosoftVisualStudioCode} from '@mdi/js';
 import { SiNetlify, SiFigma, SiHtml5, SiCss3, SiAwslambda, SiReact,
-SiJavascript, SiSupabase, SiGithub, SiPlex, SiWordpress, SiNodedotjs,
+SiJavascript, SiTypescript, SiSupabase, SiGithub, SiPlex, SiWordpress, SiNodedotjs,
 SiHomeassistant, SiClaude, SiFlutter, SiEsphome,
 SiNpm} from 'react-icons/si';
 import Contact from './Contact';
@@ -23,6 +23,7 @@ const SKILL_GROUPS = [
       { component: <SiHtml5 />, name: 'HTML5' },
       { component: <SiCss3 />, name: 'CSS3' },
       { component: <SiJavascript />, name: 'JavaScript' },
+      { component: <SiTypescript />, name: 'TypeScript' },
       { component: <SiReact />, name: 'React' },
       { component: <SiFigma />, name: 'Figma' },
       { component: <SiWordpress />, name: 'WordPress' },
