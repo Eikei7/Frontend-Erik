@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import Icon from '@mdi/react';
 import { IconContext } from 'react-icons';
 import { mdiMicrosoftWindows, mdiAws, mdiMicrosoftVisualStudioCode} from '@mdi/js';
@@ -63,6 +64,12 @@ const SKILL_GROUPS = [
 ];
 
 const LandingPage = () => {
+  useEffect(() => {
+  const link = document.querySelector("link[rel='canonical']") || document.createElement('link');
+  link.setAttribute('rel', 'canonical');
+  link.setAttribute('href', 'https://frontend-erik.se/');
+  document.head.appendChild(link);
+}, []);
   return (
     <main className="landing-page-wrapper">
       <section className="landing-container">

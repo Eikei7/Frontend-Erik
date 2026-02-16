@@ -4,6 +4,12 @@ import './AboutMe.css';
 const AboutMe = () => {
   const [activeYear, setActiveYear] = useState(1985);
   const timelineRef = useRef(null);
+  useEffect(() => {
+    const link = document.querySelector("link[rel='canonical']") || document.createElement('link');
+    link.setAttribute('rel', 'canonical');
+    link.setAttribute('href', 'https://frontend-erik.se/about');
+    document.head.appendChild(link);
+  }, []);
   
   const timelineData = [
     {
