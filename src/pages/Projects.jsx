@@ -90,7 +90,7 @@ const Projects = () => {
 
   return (
     <div className='projects-container'>
-      <h2 className='projects-title'>Some live web projects of mine</h2>
+      <h2 className='projects-title'>Live web projects</h2>
       
       <div className='projects-grid'>
         {projects.map((project, index) => (
