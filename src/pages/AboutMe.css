@@ -105,12 +105,14 @@
   position: relative;
   margin-bottom: 4rem;
   padding-left: 30px;
-  opacity: 0.4;
+  opacity: 0.3;
+  filter: blur(1.5px) brightness(0.9);
   transition: all 0.3s ease;
 }
 
 .vertical-event.active {
   opacity: 1;
+  filter: blur(0px) brightness(1);
 }
 
 .vertical-event.active .vertical-event-marker {
