@@ -5,14 +5,12 @@ const AboutMe = () => {
   const [activeYear, setActiveYear] = useState(1985);
   const timelineRef = useRef(null);
   
-  // SEO canonical link
   useEffect(() => {
     const link = document.querySelector("link[rel='canonical']") || document.createElement('link');
     link.setAttribute('rel', 'canonical');
     link.setAttribute('href', 'https://frontend-erik.se/about');
     document.head.appendChild(link);
     
-    // Cleanup function för att ta bort länken om komponenten unmountas
     return () => {
       if (link.parentNode) {
         link.parentNode.removeChild(link);
@@ -67,6 +65,15 @@ const AboutMe = () => {
       image: "img/umea2.png",
       content: (
         <p>After college I decided that I wanted to become a teacher, so I applied and got accepted into the teacher programme at <a href="https://umu.se" target="_blank" rel="noopener noreferrer">Umeå University</a> in Sweden. My two subjects were Music and English.</p>
+      )
+    },
+    {
+      year: 2006,
+      title: "Youtube",
+      image: "img/youtube.png",
+      type: "minor",
+      content: (
+        <p>In 2006, I joined a new and exciting platform called <a href="https://www.youtube.com/@Eikei" target="_blank" rel="noopener noreferrer">YouTube</a>, about a year after its launch in February 2005.</p>
       )
     },
     {
@@ -150,7 +157,7 @@ const AboutMe = () => {
     
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [activeYear, timelineData]); // Lägg till timelineData i dependency array
+  }, [activeYear, timelineData]);
 
   return (
     <div className="aboutme-container">
@@ -185,8 +192,7 @@ const AboutMe = () => {
             <article 
               id={`event-${item.year}`}
               key={item.year} 
-              className={`vertical-event ${item.year === activeYear ? 'active' : ''}`}
-            >
+              className={`vertical-event ${item.year === activeYear ? 'active' : ''} ${item.type === 'minor' ? 'vertical-event-minor' : ''}`}>
               <div className="vertical-event-content">
                 <div className="vertical-event-main-flex">
                   <div className="vertical-event-left">

@@ -10,7 +10,6 @@ export const fetchData = async () => {
     
     console.log('Response status:', response.status);
     
-    // Kontrollera rate limiting
     const remaining = response.headers.get('X-RateLimit-Remaining');
     const limit = response.headers.get('X-RateLimit-Limit');
     console.log(`Rate limit: ${remaining}/${limit} requests remaining`);
