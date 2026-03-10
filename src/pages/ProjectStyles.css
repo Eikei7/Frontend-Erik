@@ -357,7 +357,6 @@
   margin: 0 0 1rem;
 }
 
-/* Dark mode styles */
 body.dark-mode .github-error {
   background-color: #3A3A3A;
 }
@@ -507,7 +506,11 @@ body.dark-mode .video-title {
   .horizontal-project-description {
     font-size: 0.95rem;
   }
-  
+
+  .horizontal-project-footer .tech-icons-wrapper {
+    display: none;
+  }
+
   .horizontal-project-footer .tech-icon {
     width: 28px;
     height: 28px;
