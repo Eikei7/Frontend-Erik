@@ -2,10 +2,11 @@ import { useEffect } from 'react';
 import Icon from '@mdi/react';
 import { IconContext } from 'react-icons';
 import { mdiMicrosoftWindows, mdiAws, mdiMicrosoftVisualStudioCode} from '@mdi/js';
-import { SiNetlify, SiFigma, SiHtml5, SiCss3, SiAwslambda, SiReact,
+import { SiNetlify, SiFigma, SiHtml5, SiCss, SiReact,
 SiJavascript, SiTypescript, SiSupabase, SiGithub, SiPlex, SiWordpress, SiNodedotjs,
 SiHomeassistant, SiClaude, SiFlutter, SiEsphome,
 SiNpm} from 'react-icons/si';
+import { TbLambda } from "react-icons/tb";
 import Contact from './Contact';
 import './LandingPageStyles.css';
 import RecentScrobbles from '../components/RecentScrobbles';
@@ -22,7 +23,7 @@ const SKILL_GROUPS = [
     category: "Web, Frontend & UX/UI",
     skills: [
       { component: <SiHtml5 />, name: 'HTML5' },
-      { component: <SiCss3 />, name: 'CSS3' },
+      { component: <SiCss />, name: 'CSS3' },
       { component: <SiJavascript />, name: 'JavaScript' },
       { component: <SiTypescript />, name: 'TypeScript' },
       { component: <SiReact />, name: 'React' },
@@ -37,7 +38,7 @@ const SKILL_GROUPS = [
       { component: <SiNodedotjs />, name: 'Node.js' },
       { component: <SiSupabase />, name: 'Supabase' },
       { component: <SqlIcon />, name: 'SQL' },
-      { component: <SiAwslambda />, name: 'AWS Lambda' },
+      { component: <TbLambda />, name: 'AWS Lambda' },
     ]
   },
   {
