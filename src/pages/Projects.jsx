@@ -2,8 +2,11 @@ import { useState, useEffect } from 'react';
 import DataComponent from '../components/DataComponent';
 import './ProjectStyles.css';
 import OverlayProjectCard from '../components/OverlayProjectCard';
+import { useLanguage } from '../contexts/LanguageContext';
+
 
 const Projects = () => {
+  const { t } = useLanguage();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState(null);
   useEffect(() => {
@@ -27,51 +30,57 @@ const Projects = () => {
     {
       title: "MusiQuiz",
       url: "https://musiquiz.frontend-erik.se/",
+      github_url: "https://github.com/Eikei7/MusiQuiz",
       image: "img/musiquiz.png",
       technologies: ["react", "supabase"],
-      description: "A full-stack degree project for school. Challenge a friend to a music quiz! Backend uses Supabase and frontend made with React/Vite."
+      description: t('projects.musiquiz')
     },
     {
       title: "Games Library",
       url: "https://games-library.frontend-erik.se/",
+      github_url: "https://github.com/Eikei7/SwitchGames",
       image: "img/switch-library.png",
       technologies: ["react", "api", "json"],
-      description: "A library to keep track of games. It allows users to add and remove games, mark them as completed and export/import lists."
+      description: t('projects.gameslibrary')
     },
     {
       title: "My Record Collection",
       url: "https://record-collection.frontend-erik.se/",
       image: "img/my-record-collection.png",
       technologies: ["react", "api", "json"],
-      description: "A library to keep track of your record collection. Users can add and remove records and export/import lists."
+      description: t('projects.myrecordcollection')
     },
     {
       title: "LEGO® Collector",
       url: "https://lego.frontend-erik.se/",
+      github_url: "https://github.com/Eikei7/Lego-collector",
       image: "img/lego-collector.png",
       technologies: ["react", "api", "json"],
-      description: "A library to keep track of your LEGO® collection. Users can search and add sets using Rebrickable and export/import lists."
+      description: t('projects.legocollector')
     },
     {
       title: "Weather Dashboard",
       url: "https://weather.frontend-erik.se/",
+      github_url: "https://github.com/Eikei7/Weather-dashboard",
       image: "img/weather.png",
-      technologies: ["react", "api", "json"],
-      description: "A weather dashboard which uses OpenWeatherMap API to display weather information."
+      technologies: ["react", "api", "javascript","json"],
+      description: t('projects.weatherdashboard')
     },
     {
       title: "Beepbox Covers",
       url: "https://beepbox.frontend-erik.se/",
+      github_url: "https://github.com/Eikei7/Beepbox",
       image: "img/beepbox.png",
       technologies: ["html", "css"],
-      description: "A Beepbox music portfolio made entirely from HTML and CSS styling. It features a widget component for playing both my cover and the original song in Spotify."
+      description: t('projects.beepboxcovers')
     },
     {
       title: "Simple ToDo",
       url: "https://todo.frontend-erik.se/",
+      github_url: "https://github.com/Eikei7/Simple-Todo",
       image: "img/todo.png",
       technologies: ["html", "css", "javascript"],
-      description: "A simple to-do list application to keep track of tasks. Users can add, remove, and mark tasks as completed."
+      description: t('projects.simpletodo')
     }
   ];
 
@@ -79,20 +88,20 @@ const Projects = () => {
     {
       id: "ixHAfx7IQEY",
       title: "Birabuto Kingdom - Super Mario Land 2",
-      description: "A cover of the Birabuto Kingdom theme from Super Mario Land 2, made in BeepBox."
+      description: t('videoprojects.birabuto')
     },
     {
       id: "Cz3iBitQFoc",
-      title: "Playing birdsong on Alexa speakers using ESP32+RFID",
-      description: "A microcontroller project where I scan tags underneath Decobirds to play their call on a smart speaker."
+      title: "Playing bird calls on Alexa speakers using ESP32+RFID",
+      description: t('videoprojects.decobirds')
     }
   ];
 
   return (
     <div className='projects-container'>
-      <h2 className='projects-title'>Live web projects</h2>
+      <h2 className='projects-title'>{t('projects.title')}</h2>
       
-      <div className='projects-grid'>
+      <div className='horizontal-projects-grid'>
         {projects.map((project, index) => (
           <OverlayProjectCard 
             key={index}
@@ -112,11 +121,9 @@ const Projects = () => {
           </div>
         </div>
       )}
-
-      <DataComponent />
       
       <section className="video-projects-section">
-        <h2 className='projects-title'>Other Projects</h2>
+        <h2 className='projects-title'>{t('projects.video.title')}</h2>
         <div className="video-projects-grid">
           {videoProjects.map((video, index) => (
             <div key={index} className="video-card">

@@ -1,15 +1,16 @@
 import React, { useEffect, useState, useCallback, useMemo } from 'react';
 import { motion, useDragControls } from 'framer-motion';
 import './RecentScrobbles.css';
+import { useLanguage } from '../contexts/LanguageContext';
 
-const getTimeAgo = (uts) => {
+const getTimeAgo = (uts, t) => {
   const seconds = Math.floor(new Date().getTime() / 1000 - parseInt(uts));
-  if (seconds < 60) return 'Just now';
+  if (seconds < 60) return t('lastfm.justNow');
   const minutes = Math.floor(seconds / 60);
-  if (minutes < 60) return `${minutes}m ago`;
+  if (minutes < 60) return `${minutes} ${t('lastfm.minutesAgo')}`;
   const hours = Math.floor(minutes / 60);
-  if (hours < 24) return `${hours}h ago`;
-  return `${Math.floor(hours / 24)}d ago`;
+  if (hours < 24) return `${hours} ${t('lastfm.hoursAgo')}`;
+  return `${Math.floor(hours / 24)} ${t('lastfm.daysAgo')}`;
 };
 
 const RecentScrobbles = () => {
@@ -17,6 +18,7 @@ const RecentScrobbles = () => {
   const [loading, setLoading] = useState(true);
   const [isDraggable, setIsDraggable] = useState(window.innerWidth > 1500);
   
+  const { t } = useLanguage(); 
   const controls = useDragControls();
 
   const API_KEY = import.meta.env.VITE_LASTFM_API_KEY;
@@ -68,7 +70,9 @@ const RecentScrobbles = () => {
     return () => clearInterval(interval);
   }, [URL, API_KEY]);
 
-  if (loading) return <p className="recent-tracks-loading">Loading music...</p>;
+  if (loading) {
+    return <p className="recent-tracks-loading">{t('lastfm.loading')}</p>;
+  }
 
   return (
     <motion.div 
@@ -83,7 +87,7 @@ const RecentScrobbles = () => {
         onPointerDown={isDraggable ? startDrag : undefined}
         style={{ cursor: isDraggable ? 'grab' : 'default' }}
       >
-        <h3>Recently listened to:</h3>
+        <h3>{t('lastfm.recentlylistened')}</h3>
       </div>
 
       <ul className="track-list">
@@ -100,9 +104,11 @@ const RecentScrobbles = () => {
               <span className="artist-name">{track.artist['#text']}</span>
               <div className="track-status">
                 {track['@attr']?.nowplaying === 'true' ? (
-                  <span className="now-playing-badge">LISTENING NOW</span>
+                  <span className="now-playing-badge">{t('lastfm.listeningnow')}</span>
                 ) : (
-                  <span className="time-ago">{track.date ? getTimeAgo(track.date.uts) : ''}</span>
+                  <span className="time-ago">
+                    {track.date ? getTimeAgo(track.date.uts, t) : ''}
+                  </span>
                 )}
               </div>
             </div>

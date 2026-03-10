@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react';
 import '../pages/ContactStyles.css';
+import { useLanguage } from '../contexts/LanguageContext';
+
 
 function FormComponent() {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     user_name: '',
     user_email: '',
@@ -21,7 +24,6 @@ function FormComponent() {
     document.body.appendChild(script);
     
     return () => {
-      // Cleanup the script if component unmounts
       const emailScript = document.querySelector('script[src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"]');
       if (emailScript) {
         document.body.removeChild(emailScript);
@@ -35,14 +37,12 @@ function FormComponent() {
       [name]: value
     }));
     
-    // Clear error when user starts typing again
     if (error) setError(null);
   };
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
     
-    // Simple validation
     if (!formData.user_name || !formData.user_email || !formData.message) {
       setError('Please fill in all fields');
       return;
@@ -73,13 +73,13 @@ function FormComponent() {
     return (
       <div className="form-success">
         <div className="success-icon">✓</div>
-        <h2>Message Sent!</h2>
-        <p>Thank you for your message. I'll get back to you as soon as possible.</p>
+        <h2>{t('contact.messageSent')}</h2>
+        <p>{t('contact.messageSentDescription')}</p>
         <button 
           className="send-another-btn"
           onClick={() => setSubmitted(false)}
         >
-          Send Another Message
+          {t('contact.sendAnotherMessage')}
         </button>
       </div>
     );
@@ -96,7 +96,7 @@ function FormComponent() {
             name="user_name"
             type="text"
             className="form-input"
-            placeholder="Your name"
+            placeholder={t('contact.namePlaceholder')}
             value={formData.user_name}
             onChange={handleInputChange}
             required
@@ -109,7 +109,7 @@ function FormComponent() {
             name="user_email"
             type="email"
             className="form-input"
-            placeholder="Your email address"
+            placeholder={t('contact.emailPlaceholder')}
             value={formData.user_email}
             onChange={handleInputChange}
             required
@@ -121,7 +121,7 @@ function FormComponent() {
             id="message"
             name="message"
             className="form-input"
-            placeholder="Your message"
+            placeholder={t('contact.messagePlaceholder')}
             value={formData.message}
             onChange={handleInputChange}
             rows="5"
@@ -134,7 +134,7 @@ function FormComponent() {
           className="submit-button"
           disabled={loading}
         >
-          {loading ? 'Sending...' : 'Send Message'}
+          {loading ? t('contact.sending') : t('contact.sendMessage')}
         </button>
       </form>
     </div>

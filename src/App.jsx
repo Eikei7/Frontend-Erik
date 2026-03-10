@@ -9,6 +9,7 @@ import store from './store/store';
 import AboutMe from './pages/AboutMe';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { LanguageProvider } from './contexts/LanguageContext';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -22,7 +23,7 @@ function ScrollToTop() {
 
 function App() {
   return (
-
+    <LanguageProvider>
       <Provider store={store}>
         <Router>
           <ScrollToTop />
@@ -35,6 +36,7 @@ function App() {
           <Footer />
         </Router>
       </Provider>
+      </LanguageProvider>
   );
 }
 

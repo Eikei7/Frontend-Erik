@@ -1,10 +1,8 @@
-import { useState } from 'react';
 import '../pages/ProjectStyles.css';
 import { FaReact, FaJs, FaHtml5, FaCss3Alt } from 'react-icons/fa';
-import { TbJson } from "react-icons/tb";
+import { TbJson, TbApi } from "react-icons/tb";
 import { SiSupabase } from 'react-icons/si';
-import { TbApi } from "react-icons/tb";
-
+import { useLanguage } from '../contexts/LanguageContext';
 
 export const getTechIcon = (tech) => {
   switch (tech.toLowerCase()) {
@@ -20,44 +18,50 @@ export const getTechIcon = (tech) => {
 };
 
 const OverlayProjectCard = ({ project, openModal }) => {
-  const [hovered, setHovered] = useState(false);
-  
+  const { t } = useLanguage();
   return (
-    <div 
-      className="overlay-project-card"
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-    >
+    <div className="horizontal-project-card">
       <div 
-        className="overlay-image" 
+        className="horizontal-project-image" 
         style={{ backgroundImage: `url(${project.image})` }}
         onClick={() => openModal(project.image)}
       >
-
-        <div className={`overlay-content ${hovered ? 'hovered' : ''}`}>
-          <h2 className="overlay-title">{project.title}</h2>
-          <p className="overlay-description">{project.description}</p>
-          
-          {/* Ny container för att hålla länk och ikoner på samma rad */}
-          <div className="overlay-footer">
-            <a 
-              href={project.url} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="overlay-link"
-              onClick={(e) => e.stopPropagation()}
-            >
-              View Live <span className="arrow">→</span>
-            </a>
-
+        <div className="image-zoom-hint">{t('projects.clickEnlarge')}</div>
+      </div>
+      
+      <div className="horizontal-project-content">
+        <h3 className="horizontal-project-title">{project.title}</h3>
+        
+        <p className="horizontal-project-description">{project.description}</p>
+        
+        <div className="horizontal-project-footer">
+          <div className='projects-links'>
+          <a 
+            href={project.url} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="horizontal-project-link"
+          >
+            {t('projects.viewLive')} <span className="arrow">→</span>
+          </a>
+          <a 
+            href={project.github_url} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="horizontal-project-link"
+          >
+            GitHub <span className="arrow">→</span>
+          </a>
+          </div>
+          {project.technologies && project.technologies.length > 0 && (
             <div className="tech-icons-wrapper">
-              {project.technologies?.map((tech, index) => (
-                <span key={index} className="tech-icon-badge">
+              {project.technologies.map((tech, index) => (
+                <span key={index} className="tech-icon">
                   {getTechIcon(tech)}
                 </span>
               ))}
             </div>
-          </div>
+          )}
         </div>
       </div>
     </div>

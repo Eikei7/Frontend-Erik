@@ -11,11 +11,14 @@ import {
   mdiClose
 } from '@mdi/js';
 import DarkModeButton from './DarkModeButton';
+import LanguageToggle from './LanguageToggle';
+import { useLanguage } from '../contexts/LanguageContext';
 
 function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const { t } = useLanguage();
   
   useEffect(() => {
     const handleScroll = () => {
@@ -39,10 +42,9 @@ function Navbar() {
   };
   
   const navLinks = [
-    { to: '/', icon: mdiHomeVariantOutline, text: 'Home' },
-    { to: '/projects', icon: mdiBriefcaseOutline, text: 'Projects' },
-    { to: '/about', icon: mdiAccountTieOutline, text: 'About Me' }
-    
+    { to: '/', icon: mdiHomeVariantOutline, text: t('nav.home') },
+    { to: '/projects', icon: mdiBriefcaseOutline, text: t('nav.projects') },
+    { to: '/about', icon: mdiAccountTieOutline, text: t('nav.about') }
   ];
   
   const isActive = (path) => {
@@ -71,6 +73,7 @@ function Navbar() {
         </div>
         
         <div className="navbar-actions">
+          <LanguageToggle />
           <DarkModeButton />
         </div>
       </div>
@@ -78,4 +81,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default Navbar;  

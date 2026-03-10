@@ -1,14 +1,18 @@
 import './ContactStyles.css';
 import FormComponent from '../components/FormComponent';
+import { useLanguage } from '../contexts/LanguageContext';
+
 
 const Contact = () => {
+  const { t } = useLanguage();
+
   return (
     <div className="contact-container">
-      <h2 className="contact-title">Get in touch</h2>
+      <h2 className="contact-title">{t('contact.title')}</h2>
       
       <div className="contact-content">
         <div className="contact-intro">
-          <p>If you'd like to get in touch, send me a message using the form below and we'll take it from there!</p>
+          <p>{t('contact.intro')}</p>
         </div>
         
         <FormComponent />
