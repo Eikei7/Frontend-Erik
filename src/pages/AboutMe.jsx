@@ -10,7 +10,7 @@ const getTimelineData = (t, lang) => [
     content: lang === 'en' ? (
       <p>I was born in the year when the <a href="https://en.wikipedia.org/wiki/Live_Aid" target="_blank" rel="noopener noreferrer">Live Aid concerts</a> took place, <a href="https://en.wikipedia.org/wiki/Windows_1.0" target="_blank" rel="noopener noreferrer">Microsoft's Windows 1.0</a> was released and <a href="https://en.wikipedia.org/wiki/Super_Mario_Bros." target="_blank" rel="noopener noreferrer">Super Mario Bros.</a> on the NES was available in shops. I chose these three events from my birth year for a reason. The reason being that, apart from growing up using Windows, I also love retro video games and music.</p>
     ) : (
-      <p>Jag föddes samma år som <a href="https://en.wikipedia.org/wiki/Live_Aid" target="_blank" rel="noopener noreferrer">Live Aid-konserterna</a> ägde rum, <a href="https://en.wikipedia.org/wiki/Windows_1.0" target="_blank" rel="noopener noreferrer">Microsofts Windows 1.0</a> släpptes och <a href="https://en.wikipedia.org/wiki/Super_Mario_Bros." target="_blank" rel="noopener noreferrer">Super Mario Bros.</a> till NES fanns i butikerna. Jag valde dessa tre händelser av en anledning: förutom att jag vuxit upp med Windows, så älskar jag retromusik och tv-spel.</p>
+      <p>Jag föddes samma år som <a href="https://en.wikipedia.org/wiki/Live_Aid" target="_blank" rel="noopener noreferrer">Live Aid-konserterna</a> ägde rum, <a href="https://en.wikipedia.org/wiki/Windows_1.0" target="_blank" rel="noopener noreferrer">Microsofts Windows 1.0</a> släpptes och <a href="https://en.wikipedia.org/wiki/Super_Mario_Bros." target="_blank" rel="noopener noreferrer">Super Mario Bros.</a> till NES fanns i butikerna. Jag valde dessa tre händelser av en anledning: förutom att jag vuxit upp med Windows, så älskar jag musik och äldre tv-spel.</p>
     )
   },
   {
@@ -20,7 +20,7 @@ const getTimelineData = (t, lang) => [
     content: lang === 'en' ? (
       <p>In the early 90s, I began developing my interest for video games. My sister and I shared a <a href="https://sv.wikipedia.org/wiki/Nintendo_Entertainment_System" target="_blank" rel="noopener noreferrer">Nintendo 8-bit</a> console between us, taking turns in playing Ice Climber, Zelda II, Volleyball and Super Mario bros. I found myself wondering about how video games work "under the hood".</p>
     ) : (
-      <p>I början av 90-talet föddes mitt intresse för tv-spel. Min syster och jag delade på ett <a href="https://sv.wikipedia.org/wiki/Nintendo_Entertainment_System" target="_blank" rel="noopener noreferrer">Nintendo 8-bit</a> och turades om att spela Ice Climber, Zelda II, Volleyball och Super Mario Bros. Jag började tidigt fundera på hur spelen faktiskt fungerade "under huven".</p>
+      <><p>I början av 90-talet föddes mitt intresse för tv-spel. Min syster och jag delade på ett <a href="https://sv.wikipedia.org/wiki/Nintendo_Entertainment_System" target="_blank" rel="noopener noreferrer">Nintendo 8-bit</a> och turades om att spela Ice Climber, Zelda II, Volleyball och Super Mario Bros. Jag började tidigt fundera på hur spelen faktiskt fungerade "under huven".</p><br></br><p><i>Favoritmusik under denna period: Michael Jackson</i></p></>
     )
   },
   {
@@ -30,7 +30,7 @@ const getTimelineData = (t, lang) => [
     content: lang === 'en' ? (
       <p>I've experienced the web since the time of dial-up modems. I was 13 years old when I built my first HTML-only website about myself, complete with animated GIFs and marquee texts, hosted at Angelfire.com. Right around this time (circa 1998 - 2000) I also quickly grew an interest in computers and the technology behind them. On the hardware side for example, I learnt how graphics cards and RAM sticks worked, and practiced swapping them out for newer components on our shared family computer. This early hands-on approach laid the groundwork for my technical problem-solving skills.</p>
     ) : (
-      <p>Jag har upplevt webben ända sedan tiden med uppringt modem. Jag var 13 år gammal när jag byggde min första hemsida i ren HTML om mig själv, komplett med animerade GIF-bilder och marquee-texter, hostad på Angelfire.com. Vid den här tiden (ca 1998 - 2000) växte mitt intresse för datorer och tekniken bakom snabbt. Jag lärde mig hur grafikkort och RAM-minnen fungerade och övade på att byta ut dem i familjens gemensamma dator. Detta praktiska tillvägagångssätt lade grunden för min tekniska problemlösningsförmåga.</p>
+      <><p>Jag har upplevt webben ända sedan tiden med uppringt modem. Jag var 13 år gammal när jag byggde min första hemsida i ren HTML om mig själv, komplett med animerade GIF-bilder och marquee-texter, hostad på Angelfire.com. Vid den här tiden (ca 1998 - 2000) växte mitt intresse för datorer och tekniken bakom snabbt. Jag lärde mig hur grafikkort och RAM-minnen fungerade och övade på att byta ut dem i familjens gemensamma dator. Detta praktiska tillvägagångssätt lade grunden för min tekniska problemlösningsförmåga.</p><br></br><p><i>Favoritmusik under denna period: Allt möjligt från dåvarande Absolute Dance och Absolute Music-skivorna.</i></p></>
     )
   },
   {
@@ -40,7 +40,7 @@ const getTimelineData = (t, lang) => [
     content: lang === 'en' ? (
       <p>Eventually I saved up for a video capture card, which allowed me to put our recorded family holiday videos onto our computer, and that's when my interest in multimedia and graphics really took off. I frequently visited websites like <a href="https://www.newgrounds.com/" target="_blank" rel="noopener noreferrer">Newgrounds</a> (flash animation) and <a href="https://www.deviantart.com/" target="_blank" rel="noopener noreferrer">DeviantArt</a> (photos and digital art) for inspiration.</p>
     ) : (
-      <p>Till slut sparade jag ihop till ett videoredigeringskort, vilket gjorde att jag kunde föra över våra inspelade semesterfilmer till datorn. Det var då mitt intresse för multimedia och grafik verkligen tog fart. Jag besökte ofta sidor som <a href="https://www.newgrounds.com/" target="_blank" rel="noopener noreferrer">Newgrounds</a> (flash-animationer) och <a href="https://www.deviantart.com/" target="_blank" rel="noopener noreferrer">DeviantArt</a> (foto och digital konst) för inspiration.</p>
+      <><p>Så småningom sparade jag ihop till ett videoredigeringskort, vilket gjorde att jag kunde föra över våra inspelade semesterfilmer till datorn. Det var då mitt intresse för multimedia och grafik verkligen tog fart. Jag besökte ofta sidor som <a href="https://www.newgrounds.com/" target="_blank" rel="noopener noreferrer">Newgrounds</a> (flash-animationer) och <a href="https://www.deviantart.com/" target="_blank" rel="noopener noreferrer">DeviantArt</a> (foto och digital konst) för inspiration.</p><br></br><p><i>Favoritmusik under denna period: Daft Punk, Phats & Small, Robert Miles</i></p></>
     )
   },
   {
@@ -50,7 +50,7 @@ const getTimelineData = (t, lang) => [
     content: lang === 'en' ? (
       <p>This year I started my media studies at Sundsvalls gymnasium. Three exciting years of learning how to use Adobe Photoshop, Adobe Illustrator, Macromedia Director, InDesign, Pro Tools and more. I grew a fond interest for photography and sound work during this period. At home I used Adobe Audition to record myself playing guitar and singing.</p>
     ) : (
-      <p>Detta år påbörjade jag medieprogrammet på Sundsvalls gymnasium. Tre spännande år där jag fick lära mig Adobe Photoshop, Illustrator, Macromedia Director, InDesign, Pro Tools med mera. Jag utvecklade ett stort intresse för fotografi och ljudproduktion. Hemma använde jag Adobe Audition för att spela in mig själv när jag spelade gitarr och sjöng.</p>
+      <><p>Detta år påbörjade jag medieprogrammet på Sundsvalls gymnasium. Under tre spännande år fick jag lära mig att använda Adobe Photoshop, Illustrator, Macromedia Director, InDesign, Pro Tools med mera. Jag utvecklade ett stort intresse för fotografi och ljudproduktion. Hemma använde jag Adobe Audition för att spela in mig själv när jag spelade gitarr och sjöng.</p><br></br><p><i>Favoritmusik under denna period: Linkin Park, Evanescence, Lifehouse, Lars Winnerbäck, Red Hot Chili Peppers, John Mayer</i></p></>
     )
   },
   {
@@ -60,7 +60,7 @@ const getTimelineData = (t, lang) => [
     content: lang === 'en' ? (
       <p>After college I decided that I wanted to become a teacher, so I applied and got accepted into the teacher programme at <a href="https://umu.se" target="_blank" rel="noopener noreferrer">Umeå University</a> in Sweden. My two subjects were Music and English.</p>
     ) : (
-      <p>Efter gymnasiet bestämde jag mig för att bli lärare, så jag sökte och kom in på lärarprogrammet vid <a href="https://umu.se" target="_blank" rel="noopener noreferrer">Umeå universitet</a>. Mina två ämnen var musik och engelska.</p>
+      <><p>Efter gymnasiet bestämde jag mig för att bli lärare, så jag sökte och kom in på lärarprogrammet vid <a href="https://umu.se" target="_blank" rel="noopener noreferrer">Umeå universitet</a>. Mina två ämnen var musik och engelska.</p><br></br><p><i>Favoritmusik under denna period: The Beatles, Jimmy Eat World, In Flames, Incubus, System of a Down, Buckethead, Jamie Cullum</i></p></>
     )
   },
   {
@@ -81,7 +81,7 @@ const getTimelineData = (t, lang) => [
     content: lang === 'en' ? (
       <p>I started my first real job as a music teacher at a school outside of Sundsvall, Sweden.</p>
     ) : (
-      <p>Efter universitetsstudierna flyttade jag hem till Medelpad och fick ett jobb som musiklärare på en skola utanför Sundsvall.</p>
+      <><p>Efter universitetsstudierna flyttade jag hem till Medelpad och fick ett jobb som musiklärare på en skola utanför Sundsvall.</p><br></br><p><i>Favoritmusik under denna period: Owl City, Arch Enemy, Kings of Leon, Architects, Biffy Clyro, Ghost</i></p></>
     )
   },
   {
@@ -96,7 +96,7 @@ const getTimelineData = (t, lang) => [
     additionalContent: lang === 'en' ? (
       <p>I was also introduced to <a href="https://www.home-assistant.io/" target="_blank" rel="noopener noreferrer">Home Assistant</a>, a home automation platform that allows you to control and automate various devices in your home. I started to build my own smart home system using Home Assistant, which sparked my interest in programming and automation.</p>
     ) : (
-      <p>Jag blev också introducerad för <a href="https://www.home-assistant.io/" target="_blank" rel="noopener noreferrer">Home Assistant</a>, en plattform för hemautomation. Jag började bygga mitt eget smarta hem-system hemma, vilket verkligen tände gnistan för mitt intresse för programmering och automation.</p>
+      <><p>Jag blev också introducerad för <a href="https://www.home-assistant.io/" target="_blank" rel="noopener noreferrer">Home Assistant</a>, en plattform för hemautomation. Jag började bygga mitt eget smarta hem-system hemma, vilket verkligen tände gnistan för mitt intresse för programmering och automation.</p><br></br><p><i>Favoritmusik under denna period: Skraeckoedlan, Fatherson, Graveyard, Highasakite</i></p></>
     )
   },
   {
@@ -106,7 +106,7 @@ const getTimelineData = (t, lang) => [
     content: lang === 'en' ? (
       <p>This year I began my two year path at <a href="https://www.folkuniversitetet.se/kontakt/goteborg/" target="_blank" rel="noopener noreferrer">Folkuniversitetet</a> in Göteborg, Sweden to become a Frontend developer. The program provided a comprehensive foundation in modern web development, covering everything from user-centric design (UX/UI) to building robust Fullstack web applications. Through hands-on projects, I developed strong skills in core technologies like HTML, CSS, and JavaScript, while specializing in the React ecosystem. Furthermore, I expanded my technical breadth by exploring server-side development with Node.js to understand the complete lifecycle of a web application.</p>
     ) : (
-      <p>Det här året påbörjade jag min tvååriga resa på <a href="https://www.folkuniversitetet.se/kontakt/goteborg/" target="_blank" rel="noopener noreferrer">Folkuniversitetet</a> i Göteborg för att bli Frontendutvecklare. Utbildningen gav mig en stabil grund i modern webbutveckling, från UX/UI-design till robusta fullstack-applikationer. Genom praktiska projekt utvecklade jag starka färdigheter i HTML, CSS och JavaScript med specialisering inom React. Jag utforskade även backend-utveckling med Node.js för att förstå en webbapplikations hela livscykel, samt versionshantering med Git.</p>
+      <><p>Det här året påbörjade jag min tvååriga resa på <a href="https://www.folkuniversitetet.se/kontakt/goteborg/" target="_blank" rel="noopener noreferrer">Folkuniversitetet</a> i Göteborg för att bli Frontendutvecklare. Utbildningen gav mig en stabil grund i modern webbutveckling, från UX/UI-design till robusta fullstack-applikationer. Genom praktiska projekt utvecklade jag starka färdigheter i HTML, CSS och JavaScript med specialisering inom React. Jag utforskade även backend-utveckling med Node.js för att förstå en webbapplikations hela livscykel, samt versionshantering med Git.</p><br></br><p><i>Favoritmusik under denna period: Sleep Token, Greta Van Fleet, Kite, Albin Lee Meldau</i></p></>
     )
   },
   {
@@ -116,7 +116,7 @@ const getTimelineData = (t, lang) => [
     content: lang === 'en' ? (
       <p>Having graduated in June, I hope to succeed in finding a place to work where I can make use of my skills in web development, contributing to meaningful projects, and perhaps exploring new areas like mobile app development or AI integration.</p>
     ) : (
-      <p>Efter min examen i juni hade jag förhoppningar om att hitta en arbetsplats där jag kunde få använda mina kunskaper inom webbutveckling, bidra till meningsfulla projekt och kanske utforska nya områden som mobilutveckling eller AI-integrering. Detta visade sig vara lättare sagt än gjort då arbetsmarknaden var tuff.</p>
+      <><p>Efter min examen i juni hade jag förhoppningar om att hitta en arbetsplats där jag kunde få använda mina kunskaper inom webbutveckling, bidra till meningsfulla projekt och kanske utforska nya områden som mobilutveckling eller AI-integrering. Detta visade sig vara lättare sagt än gjort då arbetsmarknaden var tuff.</p><br></br><p><i>Favoritmusik under denna period: Bon Iver, Teddy Swims, Twenty One Pilots, Mountain Realm</i></p></>
     )
   },
   {

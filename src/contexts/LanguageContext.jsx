@@ -112,7 +112,7 @@ const translations = {
     'projects.clickEnlarge': 'Klicka för att förstora',
 
     'projects.musiquiz': 'Ett fullstack-projekt som jag gjorde som examensarbete. Utmana en vän på ett musikquiz! Backend använder Supabase och frontend är gjord med React/Vite.',
-    'projects.gameslibrary': 'Ett webbsida för att hålla koll på spel till Nintendo Switch och PC. Som användare kan man lägga till och ta bort spel, markera dem som klara och exportera/importera listor.',
+    'projects.gameslibrary': 'Ett webbsida för att hålla koll på ägda spel till Nintendo Switch och PC. Som användare kan man lägga till och ta bort spel, markera dem som klara och exportera/importera listor.',
     'projects.myrecordcollection': 'Ett webbsida för att hålla koll på din skivsamling. Som användare kan man lägga till och ta bort skivor och exportera/importera listor.',
     'projects.legocollector': 'Ett webbsida för att hålla koll på din LEGO®-samling. Som användare kan man söka och lägga till set med hjälp av Rebrickable och exportera/importera listor.',
     'projects.weatherdashboard': 'En vädersida som använder OpenWeatherMap API för att visa väderinformation.',
