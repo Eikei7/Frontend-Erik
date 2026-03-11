@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './AboutMe.css';
 import { useLanguage } from '../contexts/LanguageContext';
+import { Helmet } from 'react-helmet-async';
 
 const getTimelineData = (t, lang) => [
   {
@@ -137,19 +138,6 @@ const AboutMe = () => {
   const timelineRef = useRef(null);
   
   const timelineData = getTimelineData(t, language);
-
-  useEffect(() => {
-    const link = document.querySelector("link[rel='canonical']") || document.createElement('link');
-    link.setAttribute('rel', 'canonical');
-    link.setAttribute('href', 'https://frontend-erik.se/about');
-    document.head.appendChild(link);
-    
-    return () => {
-      if (link.parentNode) {
-        link.parentNode.removeChild(link);
-      }
-    };
-  }, []);
   
   const scrollToEvent = (id) => {
     const element = document.getElementById(id);
@@ -189,6 +177,9 @@ const AboutMe = () => {
 
   return (
     <div className="aboutme-container">
+      <Helmet>
+        <link rel="canonical" href="https://frontend-erik.se/about" />
+      </Helmet>
       <h2 className="aboutme-title">{t('about.historyTitle')}</h2>
             
       <div className="vertical-timeline-container">

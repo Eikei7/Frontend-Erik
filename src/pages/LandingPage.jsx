@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import Icon from '@mdi/react';
 import { IconContext } from 'react-icons';
 import { mdiMicrosoftWindows, mdiAws, mdiMicrosoftVisualStudioCode } from '@mdi/js';
@@ -13,6 +12,7 @@ import Contact from './Contact';
 import './LandingPageStyles.css';
 import RecentScrobbles from '../components/RecentScrobbles';
 import { useLanguage } from '../contexts/LanguageContext';
+import { Helmet } from 'react-helmet-async';
 
 const SqlIcon = () => (
   <svg viewBox="0 0 24 24" fill="currentColor" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
@@ -70,15 +70,11 @@ const LandingPage = () => {
   const { t } = useLanguage();
   const skillGroups = getSkillGroups(t);
 
-  useEffect(() => {
-    const link = document.querySelector("link[rel='canonical']") || document.createElement('link');
-    link.setAttribute('rel', 'canonical');
-    link.setAttribute('href', 'https://frontend-erik.se/');
-    document.head.appendChild(link);
-  }, []);
-
   return (
     <main className="landing-page-wrapper">
+      <Helmet>
+        <link rel="canonical" href="https://frontend-erik.se/" />
+      </Helmet>
       <section className="landing-container">
         <div className="landing-content">
           <header className="info-section">

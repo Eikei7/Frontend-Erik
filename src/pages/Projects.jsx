@@ -1,20 +1,14 @@
 import { useState, useEffect } from 'react';
-import DataComponent from '../components/DataComponent';
 import './ProjectStyles.css';
 import OverlayProjectCard from '../components/OverlayProjectCard';
 import { useLanguage } from '../contexts/LanguageContext';
+import { Helmet } from 'react-helmet-async';
 
 
 const Projects = () => {
   const { t } = useLanguage();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState(null);
-  useEffect(() => {
-    const link = document.querySelector("link[rel='canonical']") || document.createElement('link');
-    link.setAttribute('rel', 'canonical');
-    link.setAttribute('href', 'https://frontend-erik.se/projects');
-    document.head.appendChild(link);
-  }, []);
 
   const openModal = (imageSrc) => {
     setCurrentImage(imageSrc);
@@ -99,6 +93,9 @@ const Projects = () => {
 
   return (
     <div className='projects-container'>
+      <Helmet>
+        <link rel="canonical" href="https://frontend-erik.se/projects" />
+      </Helmet>
       <h2 className='projects-title'>{t('projects.title')}</h2>
       
       <div className='horizontal-projects-grid'>
