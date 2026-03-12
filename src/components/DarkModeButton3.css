@@ -1,6 +1,4 @@
-/* DarkModeButton3.css */
-
-.mode-switch-container {
+  .mode-switch-container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -72,7 +70,6 @@
     opacity: 1;
   }
   
-  /* Light mode (sun) icon */
   .mode-icon {
     position: relative;
     width: 100%;
@@ -106,7 +103,6 @@
   .ray-3 { transform: rotate(45deg) translateX(13px); }
   .ray-4 { transform: rotate(-45deg) translateX(13px); }
   
-  /* Dark mode (moon) icon */
   .mode-icon-moon {
     width: 18px;
     height: 18px;
@@ -135,7 +131,6 @@
     100% { opacity: 1; }
   }
   
-  /* Focus styles for accessibility */
   .mode-switch-button:focus {
     outline: none;
     box-shadow: 0 0 0 2px rgba(65, 90, 119, 0.3);
@@ -145,7 +140,6 @@
     box-shadow: 0 0 0 2px rgba(226, 109, 92, 0.3);
   }
   
-  /* Responsive adjustments */
   @media (max-width: 480px) {
     .mode-switch-button {
       width: 36px;
