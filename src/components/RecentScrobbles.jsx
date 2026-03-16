@@ -95,7 +95,7 @@ const RecentScrobbles = () => {
           <li key={track.date?.uts || `track-${index}`} className="track-item">
             <img 
               className="album-art"
-              src={track.image[2]['#text'] || 'placeholder-bild.png'} 
+              src={track.image[3]['#text'] || 'placeholder-bild.png'} 
               alt="Album cover"
               draggable={false}
             />
