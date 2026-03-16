@@ -7,8 +7,8 @@ This project is a Single Page Application (SPA) designed to showcase my profile,
 ### Home
 The Home view provides visitors with a brief introduction to who I am, and a contact form at the bottom.
 
-<img width="1892" height="901" alt="Screenshot of landing page in dark mode" src="https://github.com/user-attachments/assets/38e6edec-49a1-4916-bad6-19cc0cabca5f" />
-<img width="1899" height="903" alt="Screenshot of landing page in light mode" src="https://github.com/user-attachments/assets/b9052dfc-2515-4b5f-b802-67d1be3a9082" />
+<img width="1892" height="901" alt="Screenshot of landing page in dark mode" src="./public/img/landing-page-dark-sv.png" />
+<img width="1899" height="903" alt="Screenshot of landing page in light mode" src="./public/img/landing-page-light-en.png" />
 
 ### Projects
 The Projects view lists web projects and Youtube videos that I've made. Each project is presented with relevant details and links for further exploration.
@@ -18,7 +18,7 @@ The Projects view lists web projects and Youtube videos that I've made. Each pro
 ### About Me
 The About me section shows a timeline with life events concerning education, careers and interests.
 
-<img width="1893" height="903" alt="Screenshot of Timeline in dark mode" src="https://github.com/user-attachments/assets/a6533206-1b87-40a7-9077-e1ce98f39eaf" />
+<img width="1893" height="903" alt="Screenshot of Timeline in dark mode" src="./public/img/about-page-dark-en.png" />
 
 ## Technology Stack
 - **Frontend Framework:** Utilizes a modern frontend framework (React) for building a responsive and interactive user interface. It also includes a button for switching between two background images, which utilizes React Redux.
