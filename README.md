@@ -5,7 +5,7 @@ This project is a Single Page Application (SPA) designed to showcase my profile,
 
 ## Views
 ### Home
-The Home view provides visitors with a brief introduction to who I am, and a contact form at the bottom.
+The Home view provides visitors with a brief introduction to who I am, a widget showing my last played music and a contact form at the bottom.
 
 <img width="1892" height="901" alt="Screenshot of landing page in dark mode" src="./public/img/landing-page-dark-sv.png" />
 <img width="1899" height="903" alt="Screenshot of landing page in light mode" src="./public/img/landing-page-light-en.png" />
