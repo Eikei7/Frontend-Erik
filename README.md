@@ -13,7 +13,7 @@ The Home view provides visitors with a brief introduction to who I am, and a con
 ### Projects
 The Projects view lists web projects and Youtube videos that I've made. Each project is presented with relevant details and links for further exploration.
 
-<img width="1892" height="899" alt="Screenshot of Projects page in dark mode" src="https://github.com/user-attachments/assets/2a8d9a65-ee5d-4ff1-9db5-3bd117919c2e" />
+<img width="1892" height="899" alt="Screenshot of Projects page in dark mode" src="./public/img/projects-page-dark-en.png" />
 
 ### About Me
 The About me section shows a timeline with life events concerning education, careers and interests.

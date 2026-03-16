@@ -23,9 +23,7 @@ a {
   color: var(--steelblue);
   text-decoration: inherit;
 }
-a:hover {
-  color: #5c7fa8;
-}
+
 li {
   list-style-type: none;
 }
