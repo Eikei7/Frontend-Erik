@@ -151,29 +151,78 @@ const AboutMe = () => {
     scrollToEvent(`event-${year}`);
   };
   
-  useEffect(() => {
-    const handleScroll = () => {
-      const events = timelineData.map(item => {
-        const element = document.getElementById(`event-${item.year}`);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          return {
-            year: item.year,
-            distance: Math.abs(rect.top + rect.height / 2 - window.innerHeight / 2)
-          };
-        }
-        return { year: item.year, distance: Infinity };
-      });
-      
-      events.sort((a, b) => a.distance - b.distance);
-      if (events.length > 0 && events[0].year !== activeYear) {
-        setActiveYear(events[0].year);
+useEffect(() => {
+  const handleScroll = () => {
+    const events = timelineData.map(item => {
+      const element = document.getElementById(`event-${item.year}`);
+      if (element) {
+        const rect = element.getBoundingClientRect();
+        const elementCenter = rect.top + rect.height / 2;
+        const viewportCenter = window.innerHeight / 2;
+        
+        // Kolla om elementet är i viewport
+        const isInViewport = rect.top < window.innerHeight - 100 && rect.bottom > 100;
+        
+        return {
+          year: item.year,
+          distance: Math.abs(elementCenter - viewportCenter),
+          isInViewport: isInViewport,
+          element: element,
+          rect: rect
+        };
       }
-    };
+      return { year: item.year, distance: Infinity, isInViewport: false };
+    });
     
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [activeYear, timelineData]);
+    // Kolla om vi är längst upp på sidan
+    const isAtTop = window.scrollY <= 50;
+    
+    // Kolla om vi är längst ner på sidan
+    const isAtBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 100;
+    
+    if (isAtTop) {
+      // Om vi är längst upp, aktivera första kortet
+      const firstEvent = events[0];
+      if (firstEvent.year !== activeYear) {
+        setActiveYear(firstEvent.year);
+      }
+    } else if (isAtBottom) {
+      // Om vi är längst ner, aktivera sista kortet
+      const lastEvent = events[events.length - 1];
+      if (lastEvent.year !== activeYear) {
+        setActiveYear(lastEvent.year);
+      }
+    } else {
+      // Annars, hitta kortet närmast mitten som är synligt
+      const visibleEvents = events.filter(event => event.isInViewport);
+      
+      if (visibleEvents.length > 0) {
+        visibleEvents.sort((a, b) => a.distance - b.distance);
+        const closestEvent = visibleEvents[0];
+        
+        if (closestEvent.year !== activeYear) {
+          setActiveYear(closestEvent.year);
+        }
+      } else if (events.length > 0) {
+        // Fallback: om inget är synligt, ta det närmast mitten
+        events.sort((a, b) => a.distance - b.distance);
+        if (events[0].year !== activeYear) {
+          setActiveYear(events[0].year);
+        }
+      }
+    }
+  };
+  
+  // Kör direkt och vid scroll
+  handleScroll();
+  window.addEventListener('scroll', handleScroll);
+  window.addEventListener('resize', handleScroll); // Uppdatera vid fönsterändring
+  
+  return () => {
+    window.removeEventListener('scroll', handleScroll);
+    window.removeEventListener('resize', handleScroll);
+  };
+}, [activeYear, timelineData]);
 
   return (
     <div className="aboutme-container">

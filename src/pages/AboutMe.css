@@ -131,6 +131,11 @@
   justify-content: center;
 }
 
+.vertical-event-minor:first-of-type,
+.vertical-event-minor:last-of-type {
+  opacity: 0.6;
+}
+
 .vertical-event-minor .vertical-event-content {
   padding: 1rem;
   background-color: rgba(255, 255, 255, 0.95);
@@ -340,6 +345,10 @@ body.dark-mode .vertical-event-minor .vertical-event-content {
 }
 
 @media (max-width: 768px) {
+  .aboutme-container {
+    padding: 3rem 5rem;
+  }
+
   .aboutme-title {
     font-size: 2.8rem;
   }
