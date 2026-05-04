@@ -63,6 +63,27 @@ body.dark-mode .lastfm-link a {
   padding: 2px 8px;
 }
 
+.drag-handle {
+  display: grid;
+  grid-template-columns: repeat(2, 6px);
+  gap: 4px;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+
+.drag-handle span {
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #ccc;
+}
+
+body.dark-mode .drag-handle span {
+  background-color: #557;
+}
+
 .recent-tracks-container {
   background: #ffffff;
   border-radius: 12px;

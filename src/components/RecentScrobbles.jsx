@@ -87,6 +87,13 @@ const RecentScrobbles = () => {
         onPointerDown={isDraggable ? startDrag : undefined}
         style={{ cursor: isDraggable ? 'grab' : 'default' }}
       >
+        {isDraggable && (
+          <div className="drag-handle">
+            <span /><span />
+            <span /><span />
+            <span /><span />
+          </div>
+        )}
         <h3>{t('lastfm.recentlylistened')}</h3>
       </div>
 
