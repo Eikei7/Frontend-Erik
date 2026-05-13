@@ -53,7 +53,7 @@ const translations = {
     'projects.myrecordcollection': 'A library to keep track of your record collection. Users can add and remove records and export/import lists.',
     'projects.legocollector': 'A library to keep track of your LEGO® collection. Users can search and add sets using Rebrickable and export/import lists.',
     'projects.weatherdashboard': 'A weather dashboard which uses OpenWeatherMap API to display weather information.',
-    'projects.beepboxcovers': 'A Beepbox music portfolio made entirely from HTML and CSS styling. It features a widget component for playing both my cover and the original song in Spotify.',
+    'projects.beepboxcovers': 'A Beepbox music portfolio made with React. It features a widget component for playing my covers.',
     'projects.simpletodo': 'A simple to-do list application to keep track of tasks. Users can add, remove, and mark tasks as completed.',
 
     'videoprojects.birabuto': 'A cover of the Birabuto Kingdom theme from Super Mario Land 2, made in BeepBox.',
@@ -116,7 +116,7 @@ const translations = {
     'projects.myrecordcollection': 'Ett webbsida för att hålla koll på din skivsamling. Som användare kan man lägga till och ta bort skivor och exportera/importera listor.',
     'projects.legocollector': 'Ett webbsida för att hålla koll på din LEGO®-samling. Som användare kan man söka och lägga till set med hjälp av Rebrickable och exportera/importera listor.',
     'projects.weatherdashboard': 'En vädersida som använder OpenWeatherMap API för att visa väderinformation.',
-    'projects.beepboxcovers': 'En Beepbox-musikportfölj gjord helt i HTML och CSS. Den har en widget-komponent för att spela både min cover och originalet i Spotify.',
+    'projects.beepboxcovers': 'En Beepbox-musikportfölj gjord med React. Den har en widget-komponent för att spela mina covers.',
     'projects.simpletodo': 'En enkel att-göra-lista för att hålla koll på uppgifter. Användare kan lägga till, ta bort och markera uppgifter som klara.',
 
     'videoprojects.birabuto': 'En cover av "Birabuto Kingdom"-temat från Super Mario Land 2, gjord i BeepBox.',

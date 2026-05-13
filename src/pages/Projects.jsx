@@ -65,7 +65,7 @@ const Projects = () => {
       url: "https://beepbox.frontend-erik.se/",
       github_url: "https://github.com/Eikei7/Beepbox",
       image: "img/beepbox.png",
-      technologies: ["html", "css"],
+      technologies: ["react", "css"],
       description: t('projects.beepboxcovers')
     },
     {
