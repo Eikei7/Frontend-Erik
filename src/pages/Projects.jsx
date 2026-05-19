@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo, useCallback } from 'react';
 import './ProjectStyles.css';
 import OverlayProjectCard from '../components/OverlayProjectCard';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -10,17 +10,26 @@ const Projects = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState(null);
 
-  const openModal = (imageSrc) => {
+  const openModal = useCallback((imageSrc) => {
     setCurrentImage(imageSrc);
     setIsModalOpen(true);
-  };
+  }, []);
 
-  const closeModal = () => {
-    setIsModalOpen(false);  
+  const closeModal = useCallback(() => {
+    setIsModalOpen(false);
     setCurrentImage(null);
-  };
+  }, []);
 
-  const projects = [
+  useEffect(() => {
+    if (!isModalOpen) return;
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') closeModal();
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [isModalOpen, closeModal]);
+
+  const projects = useMemo(() => [
     {
       title: "MusiQuiz",
       url: "https://musiquiz.frontend-erik.se/",
@@ -76,9 +85,9 @@ const Projects = () => {
       technologies: ["html", "css", "javascript"],
       description: t('projects.simpletodo')
     }
-  ];
+  ], [t]);
 
-  const videoProjects = [
+  const videoProjects = useMemo(() => [
     {
       id: "ixHAfx7IQEY",
       title: "Birabuto Kingdom - Super Mario Land 2",
@@ -89,7 +98,7 @@ const Projects = () => {
       title: "Playing bird calls on Alexa speakers using ESP32+RFID",
       description: t('videoprojects.decobirds')
     }
-  ];
+  ], [t]);
 
   return (
     <div className='projects-container'>
@@ -128,6 +137,7 @@ const Projects = () => {
                 <iframe 
                   src={`https://www.youtube.com/embed/${video.id}`} 
                   title={video.title}
+                  loading="lazy"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                   referrerPolicy="strict-origin-when-cross-origin" 
                   allowFullScreen

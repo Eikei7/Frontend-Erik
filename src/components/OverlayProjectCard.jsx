@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import '../pages/ProjectStyles.css';
 import { FaReact, FaJs, FaHtml5, FaCss3Alt } from 'react-icons/fa';
 import { TbJson, TbApi } from "react-icons/tb";
@@ -17,7 +18,7 @@ export const getTechIcon = (tech) => {
   }
 };
 
-const OverlayProjectCard = ({ project, openModal }) => {
+const OverlayProjectCard = memo(({ project, openModal }) => {
   const { t } = useLanguage();
   return (
     <div className="horizontal-project-card">
@@ -66,6 +67,6 @@ const OverlayProjectCard = ({ project, openModal }) => {
       </div>
     </div>
   );
-};
+});
 
 export default OverlayProjectCard;

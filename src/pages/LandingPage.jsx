@@ -13,6 +13,7 @@ import './LandingPageStyles.css';
 import RecentScrobbles from '../components/RecentScrobbles';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Helmet } from 'react-helmet-async';
+import { useMemo } from 'react';
 
 const SqlIcon = () => (
   <svg viewBox="0 0 24 24" fill="currentColor" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
@@ -68,7 +69,7 @@ const getSkillGroups = (t) => [
 
 const LandingPage = () => {
   const { t } = useLanguage();
-  const skillGroups = getSkillGroups(t);
+  const skillGroups = useMemo(() => getSkillGroups(t), [t]);
 
   return (
     <main className="landing-page-wrapper">

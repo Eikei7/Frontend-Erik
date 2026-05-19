@@ -19,7 +19,7 @@ function FormComponent() {
     script.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js';
     script.async = true;
     script.onload = () => {
-      emailjs.init('7KdWdO7g89mTeCswg');
+      emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
     };
     document.body.appendChild(script);
     
@@ -51,13 +51,14 @@ function FormComponent() {
     setLoading(true);
     setError(null);
 
-    emailjs.sendForm('service_hswxud5', 'template_2zg5dhj', event.target)
-      .then(() => {
-        console.log('SUCCESS!');
+    emailjs.sendForm(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      event.target
+    ).then(() => {
         setSubmitted(true);
         setLoading(false);
-      }, (error) => {
-        console.log('FAILED...', error);
+      }, () => {
         setError('Something went wrong. Please try again later.');
         setLoading(false);
       });

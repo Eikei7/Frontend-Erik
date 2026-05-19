@@ -46,12 +46,16 @@ const RecentScrobbles = () => {
 
   useEffect(() => {
     if (!API_KEY) {
-      console.error("API key is missing. Please set VITE_LASTFM_API_KEY in your environment variables.");
       return;
     }
-    
+
+    let abortController = new AbortController();
+
     const fetchTracks = () => {
-      fetch(URL)
+      abortController.abort();
+      abortController = new AbortController();
+
+      fetch(URL, { signal: abortController.signal })
         .then(res => res.json())
         .then(data => {
           if (data.recenttracks && data.recenttracks.track) {
@@ -60,14 +64,18 @@ const RecentScrobbles = () => {
           setLoading(false);
         })
         .catch(err => {
-          console.error("Could not fetch data:", err);
-          setLoading(false);
+          if (err.name !== 'AbortError') {
+            setLoading(false);
+          }
         });
     };
 
     fetchTracks();
     const interval = setInterval(fetchTracks, 30000);
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+      abortController.abort();
+    };
   }, [URL, API_KEY]);
 
   if (loading) {

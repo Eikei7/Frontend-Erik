@@ -1,14 +1,15 @@
 import './App.css';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
-import LandingPage from './pages/LandingPage';
-import Projects from './pages/Projects';
+import { lazy, Suspense, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Provider } from "react-redux";
 import store from './store/store';
-import AboutMe from './pages/AboutMe';
-import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+
+const LandingPage = lazy(() => import('./pages/LandingPage'));
+const Projects = lazy(() => import('./pages/Projects'));
+const AboutMe = lazy(() => import('./pages/AboutMe'));
 import { LanguageProvider } from './contexts/LanguageContext';
 
 function ScrollToTop() {
@@ -28,11 +29,13 @@ function App() {
         <Router>
           <ScrollToTop />
           <Navbar />
-          <Routes>
-            <Route path='/' element={<LandingPage />} />
-            <Route path='/projects' element={<Projects />} />
-            <Route path='/about' element={<AboutMe />} />
-          </Routes>
+          <Suspense fallback={null}>
+            <Routes>
+              <Route path='/' element={<LandingPage />} />
+              <Route path='/projects' element={<Projects />} />
+              <Route path='/about' element={<AboutMe />} />
+            </Routes>
+          </Suspense>
           <Footer />
         </Router>
       </Provider>
