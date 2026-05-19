@@ -17,10 +17,10 @@
     Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=()"
     Content-Security-Policy = """
       default-src 'self';
-      script-src 'self' https://www.googletagmanager.com https://cdn.jsdelivr.net;
+      script-src 'self' 'sha256-ze9oCdm2Mr7XMxOOGqjwzDBC2iaovqOYQXy0SRBRX84=' https://www.googletagmanager.com https://cdn.jsdelivr.net;
       style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
       font-src 'self' https://fonts.gstatic.com;
       img-src 'self' data: https:;
-      connect-src 'self' https://ws.audioscrobbler.com https://www.google-analytics.com https://region1.google-analytics.com;
+      connect-src 'self' https://ws.audioscrobbler.com https://api.emailjs.com https://www.google-analytics.com https://region1.google-analytics.com;
       frame-src https://www.youtube.com https://www.youtube-nocookie.com;
     """
