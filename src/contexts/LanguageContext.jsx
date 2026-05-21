@@ -55,6 +55,7 @@ const translations = {
     'projects.weatherdashboard': 'A weather dashboard which uses OpenWeatherMap API to display weather information.',
     'projects.beepboxcovers': 'A Beepbox music portfolio made with React. It features a widget component for playing my covers.',
     'projects.simpletodo': 'A simple to-do list application to keep track of tasks. Users can add, remove, and mark tasks as completed.',
+    'projects.boardgamecollection': 'A library to keep track of your board game collection. Users can add and remove games and export/import lists.',
 
     'videoprojects.birabuto': 'A cover of the Birabuto Kingdom theme from Super Mario Land 2, made in BeepBox.',
     'videoprojects.decobirds': 'A microcontroller project where I scan tags underneath Decobirds to play their call on a smart speaker.',
@@ -118,6 +119,7 @@ const translations = {
     'projects.weatherdashboard': 'En vädersida som använder OpenWeatherMap API för att visa väderinformation.',
     'projects.beepboxcovers': 'En Beepbox-musikportfölj gjord med React. Den har en widget-komponent för att spela mina covers.',
     'projects.simpletodo': 'En enkel att-göra-lista för att hålla koll på uppgifter. Användare kan lägga till, ta bort och markera uppgifter som klara.',
+    'projects.boardgamecollection': 'Ett webbsida för att hålla koll på din brädspelssamling. Som användare kan man lägga till/ta bort spel och exportera/importera listor.',
 
     'videoprojects.birabuto': 'En cover av "Birabuto Kingdom"-temat från Super Mario Land 2, gjord i BeepBox.',
     'videoprojects.decobirds': 'Ett mikrokontrollerprojekt där jag skannar taggar under Decobirds för att spela deras läte på en smart högtalare.',

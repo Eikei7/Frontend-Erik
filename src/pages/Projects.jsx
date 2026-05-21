@@ -84,6 +84,14 @@ const Projects = () => {
       image: "img/todo.png",
       technologies: ["html", "css", "javascript"],
       description: t('projects.simpletodo')
+    },
+    {
+      title: "Board Game Collection",
+      url: "https://boardgames.frontend-erik.se/",
+      github_url: "https://github.com/Eikei7/Board-game-collection",
+      image: "img/boardgamecollection.png",
+      technologies: ["react", "api","json"],
+      description: t('projects.boardgamecollection')
     }
   ], [t]);
 

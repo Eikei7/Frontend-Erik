@@ -1,16 +1,16 @@
 import './App.css';
-import Footer from './components/Footer';
-import Navbar from './components/Navbar';
 import { lazy, Suspense, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Provider } from "react-redux";
-import store from './store/store';
 import { useLocation } from 'react-router-dom';
+import store from './store/store';
+import { LanguageProvider } from './contexts/LanguageContext';
+import Footer from './components/Footer';
+import Navbar from './components/Navbar';
 
 const LandingPage = lazy(() => import('./pages/LandingPage'));
 const Projects = lazy(() => import('./pages/Projects'));
 const AboutMe = lazy(() => import('./pages/AboutMe'));
-import { LanguageProvider } from './contexts/LanguageContext';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
