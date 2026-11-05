@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './NavbarStyles.css';
-import Icon from '@mdi/react';
+import { Icon } from '@mdi/react';
 import { 
   mdiBriefcaseOutline, 
   mdiHomeVariantOutline, 
